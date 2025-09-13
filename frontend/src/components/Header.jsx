@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Header(props) {
   return (
@@ -6,10 +7,10 @@ function Header(props) {
       <div className="flex justify-between px-20 items-center p-4 shadow-xl">
         <h1 className='text-4xl font-bold  '>Furni<span className=''>ture</span></h1>
         <ul className='flex gap-10 '>
-          <li>Home</li>
-          <li>About</li>
-          <li>Shop</li>
-          <li>Contact</li>
+        <NavLink to='/'><li>Home</li></NavLink>
+        <NavLink to='/about' >  <li>About</li></NavLink>
+       <NavLink to='/shop'>  <li>Shop</li></NavLink> 
+       <NavLink to='/contact'> <li>Contact</li></NavLink> 
           <li className='flex gap-2 items-center'>
             <input className='border-2 border-gray-600 h-8 rounded-lg px-4 outline-none' type="search" name="" id="" />
             <i className='fa-solid fa-magnifying-glass text-2xl '></i>
