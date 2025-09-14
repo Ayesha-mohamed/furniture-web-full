@@ -9,6 +9,7 @@ import Addproduct from "./Dashboard/Addproduct"
 import Dashboard from "./Dashboard/Dashboard"
 import Reports from "./Dashboard/Reports"
 import Details from "./pages/Details"
+import Product from "./Dashboard/product"
 import LogIn from "./pages/login"
 import SignUp from "./pages/signUp"
 
@@ -81,6 +82,16 @@ const App = () =>{
                 <Details />
             </Mainlayout>
             } />
+        <Route path="/login" element={
+            <Mainlayout>
+                <LogIn />
+            </Mainlayout>
+            } />
+        <Route path="/signup" element={
+            <Mainlayout>
+                <SignUp />
+            </Mainlayout>
+            } />
         
 
 {/*dashboard */}
@@ -93,6 +104,16 @@ const App = () =>{
             <Route path="/addproduct" element={
             <Dashboardlayout>
                 <Addproduct />
+            </Dashboardlayout>
+            } />
+            <Route path="/product" element={
+            <Dashboardlayout>
+                <Product />
+            </Dashboardlayout>
+            } />
+            <Route path="/update/product/" element={
+            <Dashboardlayout>
+                <Product />
             </Dashboardlayout>
             } />
 
