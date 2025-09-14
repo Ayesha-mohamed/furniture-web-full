@@ -98,8 +98,8 @@ function Home(props) {
             <div className='grid grid-cols-4 ml-8 mt-10'>
            <div className=' border-2 border-blue-950 w-64 h-64'>
            <img className='h-52 w-64' src="https://i.pinimg.com/736x/89/ea/9a/89ea9a0d49daa9154c82dd5849810881.jpg" alt="" />
-           <div className='flex gap-28'>
-           <h1 className='text-2xl text-blue-950 font-semibold ml-2'>Armchair </h1>
+           <div className='flex gap-28 mt-2'>
+           <h1 className='text-2xl text-blue-950 font-semibold ml-1'>Armchair </h1>
            <i class="fa-solid fa-plus text-yellow-600 text-2xl"></i>
            </div>
            </div>
@@ -109,9 +109,9 @@ function Home(props) {
                 <div className='flex ml-2 mb-3'>
            <div className=' border-2 border-blue-950 w-64 h-64'>
            <img className='h-52 w-64' src="https://i.pinimg.com/736x/eb/6c/6f/eb6c6f5bf78883af9802198e830e206a.jpg" alt="" />
-           <div className='flex gap-28'>
+           <div className='flex gap-28 mt-2'>
            <h1 className='text-xl text-blue-950 font-semibold ml-2'> Dining  </h1>
-           <i class="fa-solid fa-plus text-yellow-600 text-2xl"></i>
+           <i class="fa-solid fa-plus text-yellow-600 text-2xl ml-10"></i>
            </div>
            </div>
 
@@ -121,7 +121,7 @@ function Home(props) {
                 <div className='flex ml-2 mb-3'>
            <div className=' border-2 border-blue-950 w-62 h-64'>
            <img className='h-52 w-64' src="https://i.pinimg.com/1200x/ea/3d/75/ea3d75e51cd50b3ea2fc64ceac6ad91c.jpg" alt="" />
-           <div className='flex gap-28'>
+           <div className='flex gap-28 mt-2'>
            <h1 className='text-2xl text-blue-950 font-semibold ml-2'>Bar Stool  </h1>
            <i class="fa-solid fa-plus text-yellow-600 text-2xl"></i>
            </div>
@@ -132,9 +132,9 @@ function Home(props) {
                  <div className='flex ml-4 mb-3'>
            <div className=' border-2 border-blue-950 w-60 h-64'>
            <img className='h-52 w-64' src="https://i.pinimg.com/736x/4e/ea/07/4eea07e50b49174349b2fc4f75f6dcbd.jpg" alt="" />
-           <div className='flex gap-28'>
+           <div className='flex gap-28 mt-2'>
            <h1 className='text-2xl text-blue-950 font-semibold ml-2'>Office </h1>
-           <i class="fa-solid fa-plus text-yellow-600 text-2xl"></i>
+           <i class="fa-solid fa-plus text-yellow-600 text-2xl ml-2"></i>
            </div>
            </div>
 
@@ -145,7 +145,7 @@ function Home(props) {
                  <div className='flex  mb-3'>
            <div className=' border-2 border-blue-950 w-64 h-64'>
            <img className='h-52 w-64' src="https://i.pinimg.com/1200x/31/32/f4/3132f48bab8edecb0eee6690232f80ee.jpg" alt="" />
-           <div className='flex gap-28'>
+           <div className='flex gap-28 ml-2'>
            <h1 className='text-2xl text-blue-950 font-semibold ml-2'> Bed Far  </h1>
            <i class="fa-solid fa-plus text-yellow-600 text-2xl"></i>
            </div>
@@ -158,7 +158,7 @@ function Home(props) {
                  <div className='flex ml-2 mb-3'>
            <div className=' border-2 border-blue-950 w-64 h-64'>
            <img className='h-52 w-64' src="https://i.pinimg.com/1200x/05/40/a6/0540a62dd0626612b775bb1e7c05dff2.jpg" alt="" />
-           <div className='flex gap-28'>
+           <div className='flex gap-28 ml-2'>
            <h1 className='text-2xl text-blue-950 font-semibold ml-2'> Dresser   </h1>
            <i class="fa-solid fa-plus text-yellow-600 text-2xl"></i>
            </div>
@@ -169,7 +169,7 @@ function Home(props) {
                  <div className='flex ml-2 mb-3'>
            <div className=' border-2 border-blue-950 w-64 h-64'>
            <img className='h-52 w-64' src="https://i.pinimg.com/1200x/89/37/0a/89370a52635f55c6d78ab359508c1bea.jpg" alt="" />
-           <div className='flex gap-28'>
+           <div className='flex gap-28 ml-2'>
            <h1 className='text-2xl text-blue-950 font-semibold ml-2'>  Vanity T   </h1>
            <i class="fa-solid fa-plus text-yellow-600 text-2xl"></i>
            </div>
@@ -180,7 +180,7 @@ function Home(props) {
                  <div className='flex ml-2 mb-3'>
            <div className=' border-2 border-blue-950 w-64 h-64'>
            <img className='h-52 w-64' src="https://i.pinimg.com/736x/0c/fc/99/0cfc99237c96413b824ba39296a31a59.jpg" alt="" />
-           <div className='flex gap-28'>
+           <div className='flex gap-28 ml-2'>
            <h1 className='text-2xl text-blue-950 font-semibold ml-2'> Dresser   </h1>
            <i class="fa-solid fa-plus text-yellow-600 text-2xl"></i>
            </div>
