@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 require("dotenv").config();
 const productRoute = require('./routers/productRoute');
 const userRouter = require("./routers/userRouter")
-
+const orderRoutes =  require("./routers/orderRoutes")
 
 const app = express()
 
@@ -22,5 +22,6 @@ app.use("/allproductimage", express.static("prImages"))
 app.use(productRoute)
 app.use(userRouter)
 app.use(userRouter)
+app.use(orderRoutes)
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

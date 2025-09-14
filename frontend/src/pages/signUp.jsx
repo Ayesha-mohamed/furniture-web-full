@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
   const [name, setName] = useState("");
@@ -8,7 +9,12 @@ function SignUp() {
   const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
 
-  const handelPost = () => {
+
+  const navigate = useNavigate()
+
+
+  const handelPost = (e) => {
+    e.preventDefault();
     axios.post("http://localhost:3000/create/user", {
       name: name,
       email: email,
@@ -18,6 +24,7 @@ function SignUp() {
     })
     .then(() => {
       alert("success");
+      navigate("/login")
     })
     .catch((err) => {
       console.error(err);

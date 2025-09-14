@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
+import{ ToastContainer, toast} from "react-toastify"
  
  
  
@@ -9,12 +10,21 @@ import { useState } from "react";
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+
+  const navigate = useNavigate()
+
   const handleLogIn = (e) =>{
     e.preventDefault()
     axios.post("http://localhost:3000/create/userlogin",{
       email: email,
       password: password
     }).then((res)=>{
+      toast.success("login success")
+      setTimeout(()=>{
+        navigate("/shop")
+      },2000)
+      localStorage.setItem("user", JSON.stringify(res.data))
+
       console.log(res.data);
     })
   }
@@ -43,11 +53,12 @@ import { useState } from "react";
               type="password"  placeholder="••••••••"  className="mt-1 w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
           </div>
 
-          <button onChange={()=> handleLogIn} type="button"  className="w-full bg-blue-950 text-white py-2 rounded-lg hover:bg-blue-900 transition" >
+          <button onClick={(e)=> handleLogIn(e)} type="submit"  className="w-full bg-blue-950 text-white py-2 rounded-lg hover:bg-blue-900 transition" >
             Login
           </button>
         </form>
       </div>
+      <ToastContainer position="top-right" autoClose={2000} />
     </div>
   );
 }
