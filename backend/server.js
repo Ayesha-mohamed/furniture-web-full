@@ -15,7 +15,7 @@ app.use(express.json());
 mongoose.connect(process.env.db_url).then(()=> console.log("connected to database"))
 
 
-app.use("/prImages", express.static("prImages"))
+app.use("/allproductimage", express.static("prImages"))
 
 app.use(productRoute)
 

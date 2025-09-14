@@ -11,7 +11,8 @@ const createProduct = async (req, res) => {
             price: price,
             description: description,
             prImage: prImage,
-            category: category
+            category: category,
+            prImage: req.file ? req.file.filename : undefined
         })
 
         await newProduct.save();
@@ -58,7 +59,7 @@ const updateProduct = async (req, res) =>{
                 price: price,
                 description: description,
                 category: category,
-                prImage: req.file.filename
+                prImage: req.file ? req.file.filename : undefined
             }}
         )
 
@@ -85,4 +86,23 @@ const deleteProduct = async (req, res) =>{
 }
 
 
-module.exports = { createProduct, readAllProduct, updateProduct, readSingleProduct, deleteProduct}
+//search product
+const searchProduct = async (req, res) =>{
+    try {
+        const searchProduct = await productSchema.find({
+            $or: [
+                {name: {$regex: req.params.key}},
+                {category: {$regex: req.params.key}},
+                // {price: {$regex: req.params.key}}
+            ]
+        })
+        if(searchProduct){
+            res.send(searchProduct)
+        }
+        
+    } catch (error) {
+        res.status(400).json({ message: error.message })
+    }
+}
+
+module.exports = { createProduct, readAllProduct, updateProduct, readSingleProduct, deleteProduct, searchProduct}
