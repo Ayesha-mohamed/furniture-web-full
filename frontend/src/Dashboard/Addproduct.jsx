@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {ToastContainer, toast} from 'react-toastify'
+// import {ToastContainer, toast} from "react-toastify"
+import {toast,Toaster} from 'react-hot-toast';
 
 function Addproduct(props) {
 
@@ -44,8 +45,8 @@ function Addproduct(props) {
                     <button onClick={handleSubmit} className='w-80 h-10 bg-blue-500 text-white rounded-xl '>Add Product</button>
                 </form>
             </div>
-
-            <ToastContainer position='top-right' autoClose={2000} />
+            <Toaster position='top-right' autoClose={2000} />
+            {/* <ToastContainer position='top-right' autoClose={2000} /> */}
         </div>
     );
 }

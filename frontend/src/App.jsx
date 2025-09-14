@@ -9,6 +9,8 @@ import Addproduct from "./Dashboard/Addproduct"
 import Dashboard from "./Dashboard/Dashboard"
 import Reports from "./Dashboard/Reports"
 import Details from "./pages/Details"
+import LogIn from "./pages/login"
+import SignUp from "./pages/signUp"
 
 
 function Mainlayout({children}){
@@ -62,6 +64,16 @@ const App = () =>{
         <Route path="/cart" element={
             <Mainlayout>
                 <Cart />
+            </Mainlayout>
+            } />
+        <Route path="/login" element={
+            <Mainlayout>
+                <LogIn />
+            </Mainlayout>
+            } />
+        <Route path="/signUp" element={
+            <Mainlayout>
+                <SignUp />
             </Mainlayout>
             } />
         <Route path="/details" element={

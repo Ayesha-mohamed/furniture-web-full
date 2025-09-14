@@ -12,10 +12,9 @@ function Header(props) {
        <NavLink to='/shop'>  <li>Shop</li></NavLink> 
        <NavLink to='/contact'> <li>Contact</li></NavLink> 
         </ul>
-        <div className="flex gap-10">
-          <button className='bg-blue-500 px-8 py-2  rounded-xl text-white'>Login</button>
-          <button className='bg-transparent px-8 py-2 border-2 border-black  rounded-md text-2xl  '>Sign up</button>
-
+        <div className="flex items-center gap-10">
+          <NavLink to="/login"><button className='bg-blue-500 px-8 py-2  rounded-md text-white'>Login</button></NavLink>
+          <NavLink to="/signUp"><button className='bg-transparent px-8 py-2 border-2 border-black  rounded-md '>Sign up</button></NavLink>
           <NavLink to='/cart'> <i className="fa-solid fa-cart-shopping text-3xl"></i></NavLink>
             <span className='bg-red-500 text-white rounded-full px-2 absolute right-16 -mt-3 ml-3 text-sm'>0</span>
 

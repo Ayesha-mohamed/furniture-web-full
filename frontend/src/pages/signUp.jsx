@@ -1,4 +1,15 @@
+import { useState } from "react";
+
+
 function SignUp() {
+
+const [name, setName] = useState("")
+const [email, setEmail] = useState("")
+const [phone, setPhone] = useState("")
+const [address, setAddress] = useState("")
+
+
+
   return (
     <div className="bg-blue-950 min-h-screen grid place-items-center">
       <div className="w-full max-w-md bg-white rounded-2xl shadow p-6">
@@ -7,7 +18,7 @@ function SignUp() {
           <h2>Customer</h2>
           <h2>Admin</h2>
         </div>
-        <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
+        <h2 className="text-2xl font-semibold text-center mb-6">signup</h2>
 
         {/* Form */}
         <form className="space-y-4">
@@ -37,7 +48,7 @@ function SignUp() {
           </div>
 
           <button type="button"  className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition" >
-            Login
+            signUp
           </button>
         </form>
       </div>
