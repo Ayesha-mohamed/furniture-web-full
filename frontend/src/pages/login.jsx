@@ -2,6 +2,7 @@ import axios from "axios";
 import { act, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import{ ToastContainer, toast} from "react-toastify"
+import Footer from "../components/footer";
  
  
  
@@ -30,10 +31,11 @@ import{ ToastContainer, toast} from "react-toastify"
 
 
   return (
-    <div className="bg-cover bg-center w-full h-screen bg-[url('https://i.pinimg.com/736x/5d/0e/ed/5d0eed1f2e5de0a2a0d97a5e5a6d4872.jpg')] flex items-center justify-center ">
+    <>
+    <div className="bg-cover bg-center w-full h-screen bg-[url('https://i.pinimg.com/736x/5d/0e/ed/5d0eed1f2e5de0a2a0d97a5e5a6d4872.jpg')] flex items-center justify-center">
       <div className="w-full max-w-md bg-white/55 backdrop-blur-lg  rounded-2xl shadow p-6     ">
         {/* Buttons */}
-        <div className="flex justify-center gap-10 mb-6">
+        <div className="flex justify-center gap-10 ">
           <button onClick={()=> setActiveTab === "customer"} className={`${activeTab === "customer" ? "text-blue-600" : ""}`} >Customer</button>
           <button  onClick={()=> setActiveTab("admin")} className={`${activeTab === "admin" ? "text-blue-600" : ""}`} >Admin</button>
 
@@ -60,7 +62,11 @@ import{ ToastContainer, toast} from "react-toastify"
         </form>
       </div>
       <ToastContainer position="top-right" autoClose={2000} />
+     
     </div>
+    <Footer/>
+    </>
+  
   );
 }
 
