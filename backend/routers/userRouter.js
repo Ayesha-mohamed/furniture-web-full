@@ -5,6 +5,7 @@ const router = express.Router();
 router.post("/create/user", UserController.createUser)
 router.get("/read/user", UserController.readUser )
 router.post("/create/userlogin", UserController.Userlogin )
+router.get("/total/customer", UserController.totalAllCustomers)
 
 
 

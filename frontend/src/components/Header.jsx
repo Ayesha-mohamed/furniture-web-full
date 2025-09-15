@@ -31,7 +31,7 @@ function Header(props) {
       getUser ? <div className="flex ">
         <div className="w-10 h-10 rounded-full bg-blue-600 text-center mr-5">
 
-        <h1 className=' text-white text-center '>{JSON.parse(getUser).data?.customer.name[0]}</h1>
+        <h1 className='  text-center text-2xl font-bold text-black '>{JSON.parse(getUser).data?.customer.name[0]}</h1>
         </div>
                          
  <Link to='/login'> <button onClick={handleLogout}  className='border-2 px-3 py-2 mr-10' ><i className='fa-solid fa-user mr-2'></i>LogOut</button></Link>

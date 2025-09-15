@@ -22,7 +22,6 @@ function Product(props) {
     const handleDelete = (id) =>{
         axios.delete(`http://localhost:3000/delete/product/${id}`).then(()=>{
             toast.success("Deleted successfully")
-            handleReadProduct()
         }).catch((err)=>{
             console.log(err);
         })

@@ -1,3 +1,4 @@
+const userModel = require("../models/userModel");
 const UserModel = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 
@@ -68,5 +69,22 @@ const Userlogin = async (req, res) => {
     }
 };
 
-module.exports = { createUser, readUser, Userlogin };
+
+//total customers
+const totalAllCustomers = async (req, res) =>{
+    const getAllCustomer = await userModel.aggregate([
+        {
+            $group: {
+                _id: null,
+                totalCustomer: {$sum: 1}
+            }
+        }
+    ])
+
+    if(getAllCustomer){
+        res.send(getAllCustomer)
+    }
+}
+
+module.exports = { createUser, readUser, Userlogin, totalAllCustomers };
 

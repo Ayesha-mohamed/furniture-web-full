@@ -126,4 +126,32 @@ const placeOrder = async (req, res) => {
   }
 };
 
-module.exports = { placeOrder };
+//read order
+const readOrder = async (req, res) =>{
+  const getOrder = await orderModel.find()
+  if(getOrder){
+    res.send(getOrder)
+  }
+}
+
+//total amount
+const getTotalAmount = async (req, res) =>{
+  const totalAmount = await orderModel.aggregate([
+    {
+      $group: {
+        _id: null,
+        total: { $sum: "$TotalAmount" }
+      
+      } 
+     
+    }
+  ])
+
+   if(totalAmount){
+        res.send(totalAmount)
+      }
+}
+
+
+
+module.exports = { placeOrder, readOrder, getTotalAmount };

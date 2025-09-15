@@ -80,7 +80,7 @@ function Shop(props) {
             </div>
 
 
-            <div className="flex flex-wrap justify-center gap-10 mt-20 ml-10 ">
+            <div className="grid sm:grid-cols-3 grid-cols-1 justify-center gap-10 mt-20 ml-10 ">
 
            
         {
