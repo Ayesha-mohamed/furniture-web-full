@@ -1,26 +1,29 @@
 import React from 'react';
+import Footer from '../components/footer';
+import { NavLink } from 'react-router-dom';
 
 function About(props) {
     return (
+      <>
         <div>
              <section
      
-     className="h-screen bg-cover bg-center flex items-center justify-center text-white relative"
+     className=" sm:[90vh] h-screen bg-cover bg-center flex items-center justify-center text-white relative"
       style={{ backgroundImage: "url('https://i.pinimg.com/1200x/0c/5a/a6/0c5aa624cef2ac5844ab51c9fb69fc2d.jpg')" }}
     >
       {/* Overlay madow yar */}
       <div className="absolute inset-0 bg-black/50"></div>
        
       {/* Content */}
-      <div className="relative z-10 text-center max-w-2xl px-6 ">
+      <div className="relative z-10 text-center max-w-2xl px-6  ">
         <h1 className="text-5xl md:text-6xl font-bold mb-4">About Us</h1>
       </div>
     </section>
 
-            <div className='w-full  mt-8 flex justify-around gap-10'>
+            <div className='w-full  mt-8 sm:flex pt-4  justify-around gap-20'>
         <div>
 
-                <div className=' flex'>
+                <div className=' flex items-center gap-2 '>
                     <i className="fa-regular fa-clock text-2xl font-semibold  text-gray-400"></i>
                     <p className='text-2xl font-semibold'> Shop Online</p>
                 </div>
@@ -28,7 +31,7 @@ function About(props) {
         </div>
            
             <div>
-                <div className='flex '>
+                <div className='flex items-center gap-2'>
                     <i className="fa-solid fa-briefcase text-2xl font-semibold  text-gray-400" ></i>
                     <p className='text-2xl font-semibold'> Free Shipping</p>
                 </div>
@@ -36,7 +39,7 @@ function About(props) {
         
             </div>
             <div>
-                <div className='flex '>
+                <div className='flex   items-center gap-2'>
                     <i className="fa-solid fa-credit-card text-2xl font-semibold text-gray-400"></i>
                     <p className='text-2xl font-semibold'> Return Policy</p>
                 </div>
@@ -45,7 +48,7 @@ function About(props) {
 
     
                 <div>
-                <div className='flex '>
+                <div className='flex items-center gap-2'>
                     <i className="fa-regular fa-file-invoice-dollar text-2xl font-semibold text-gray-400"></i>
                     <p className='text-2xl font-semibold'> Payment</p>
                 </div>
@@ -56,14 +59,14 @@ function About(props) {
         <div>
             <section
                 
-     className="w-[100%] h-[700px] bg-cover bg-center  mt-10"
+     className="w-[100%] sm:[90vh]  h-[700px] bg-cover bg-center  mt-20"
       style={{ backgroundImage: "url('https://i.pinimg.com/1200x/9b/af/7b/9baf7b6bc570094488db8884b8bc6488.jpg')" }}
       >
 
       </section>
          
         </div>
-        <div className='w-full h-[200px] flex justify-around gap-20 mt-10'>
+        <div className='w-full sm:[90vh] px-7 py-4  sm:flex   flex-col-3 justify-around gap-20 mt-20'>
         <div>
             <h2 className='text-2xl font-semibold'>Functionality meets perfection</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse massa libero, <br /> mattis volutpat id. Egestas adipiscing placerat eleifend a nascetur. Mattis proin enim, nam porttitor vitae. </p>
@@ -97,36 +100,39 @@ function About(props) {
           ></div>
         </div>
          </div >
-          <h1 className='text-3xl font-semibold mb-5 ml-8'>Latest Blog Posts</h1>
-         <div className='w-full h-[600px] flex justify-around text-center gap-2'>
+          <h1 className='text-3xl font-semibold mb-5 ml-8 mt-3'>Latest Our Products</h1>
+         <div className='w-full flex-col-2  items-center sm:flex mb-40 ml-10  justify-around text-center gap-2'>
            
-            <div  className='w-[450px] h-[300px] rounded-3xl ml-10 '>
+            <div  className='w-[350px]  rounded-3xl  '>
                 <img  className='w-[300px] h-[300px] rounded-lg'  src="https://i.pinimg.com/1200x/aa/26/5c/aa265cd71b567e57cc629ab96d958e98.jpg" alt="" />
-                <h3>sep 13 2025</h3>
+                <h3 className='font-semibold'>sep 13 2025</h3>
                 <p>Paint your office in natural colors only</p>
-                <button className='ext-xl px-8 py-4 text-blue-600'>Read More</button>
+              <NavLink to={"/shop"}> <button className=' px-8 py-2 text-blue-600 border-b-2 font-semibold'>Read More</button> </NavLink>
             </div>
-            <div className='w-[350px] h-[300px] rounded-3xl mr-7' >
+            <div className='w-[350px] rounded-3xl ' >
                 <img className='w-[300px] h-[300px] rounded-lg' src="https://i.pinimg.com/1200x/68/69/62/68696297a529fe57fb579a75a4f86905.jpg" alt="" />
-                <h3>sep 13 2025</h3>
+                <h3 className='font-semibold'>sep 13 2025</h3>
                 <p>Paint your office in natural colors only</p>
-                <button className='text-xl px-8 py-4 text-blue-600'>Read More</button>
+               <NavLink to={"/shop"}><button className='px-8 py-2 text-blue-600 border-b-2 font-semibold'>Read More</button></NavLink>
             </div>
-            <div className='w-[350px] h-[300px] rounded-3xl mr-7'>
+            <div className='w-[350px] rounded-3xl'>
                 <img className='w-[300px] h-[300px] rounded-lg' src="https://i.pinimg.com/1200x/ab/f9/b8/abf9b8faa5be1797b0044f2b43160045.jpg" alt="" />
-                <h3>sep 13 2025</h3>
+                <h3 className='font-semibold'>sep 13 2025</h3>
                 <p>Paint your office in natural colors only</p>
-                <button className='text-xl px-8 py-4 text-blue-600'>Read More</button>
+               <NavLink to={"/shop"}>  <button className=' px-8 py-2 border-b-2 text-blue-600 font-semibold'>Read More</button></NavLink>
             </div>
-            <div className='w-[350px] h-[300px] rounded-3xl mr-7'>
-                <img className='w-[300px] h-[300px] rounded-lg' src="https://i.pinimg.com/736x/57/10/00/571000c64b3765975d8d49acf40f165d.jpg" alt="" />
-                <h3>sep 13 2025</h3>
+            <div className='w-[350px]  rounded-3xl mr-7'>
+                <img className='w-[300px] h-[300px] rounded-lg ' src="https://i.pinimg.com/736x/57/10/00/571000c64b3765975d8d49acf40f165d.jpg" alt="" />
+                <h3 className='font-semibold'>sep 13 2025</h3>
                 <p>Paint your office in natural colors only</p>
-                <button className='text-xl px-8 py-4 text-blue-600'>Read More</button>
+              <NavLink to={"/shop"}> <button className=' px-8 py-2 border-b-2 text-blue-600 font-semibold'>Read More</button></NavLink> 
             </div>
          </div>
         
         </div>
+
+        <Footer/>
+        </>
     );
 }
 

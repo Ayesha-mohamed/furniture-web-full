@@ -11,7 +11,7 @@ function Dashboard(props) {
                   <Link to='/dashboard'> <li className='text-2xl font-semibold'>Dashboard</li> </Link> 
                 <Link to='/product'>   <li className='text-2xl font-semibold' >Products</li> </Link> 
                  <Link to='/addproduct'>   <li className='text-2xl font-semibold mr-2'> <i className='fa-solid fa-plus'></i>product</li></Link>
-                 <li className='text-2xl font-semibold'>Messages</li>
+              <Link to='/message'>  <li className='text-2xl font-semibold'>Messages</li></Link> 
                 </ul>
             </div>
                 </div>

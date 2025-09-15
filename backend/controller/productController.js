@@ -75,7 +75,7 @@ const updateProduct = async (req, res) =>{
 //delete
 const deleteProduct = async (req, res) =>{
     try {
-        const deleteProduct = await productSchema.deleteOne({id: req.params.id})
+        const deleteProduct = await productSchema.deleteOne({id: req.params_id})
         if(deleteProduct){
             res.send(deleteProduct)
         }

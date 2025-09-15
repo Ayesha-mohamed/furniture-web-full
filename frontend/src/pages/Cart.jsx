@@ -219,12 +219,12 @@ function Cart() {
 
 
     const handleIncrement = (id) =>{
-      setProducts(pr =>pr.map(
-        item => item._id === id ? {...item, quantity: item.quantity < item.maxQuantity ? item.quantity +1 : item.quantity } : item
+      setData(pr =>pr.map(
+        item => item._id === id ? {...item, quantity: item.quantity ? item.quantity +1 : item.quantity } : item
       ))
     }
     const handleDecrement = (id) =>{
-      setProducts(pr =>pr.map(
+      setData(pr =>pr.map(
         item => item._id === id ? {...item, quantity: item.quantity > 1 ? item.quantity -1 : item.quantity } : item
       ))
     }
@@ -310,14 +310,14 @@ function Cart() {
                                     {/* Quantity Controls */}
                                     <div className="mt-4 md:mt-0 flex items-center gap-2">
                                         <button
-                                        onClick={()=> handleDecrement(item_id)}
+                                        onClick={()=> handleDecrement(item._id)}
                                             className="bg-gray-200 hover:bg-gray-300 text-black px-2 py-1 rounded"
                                         >
                                             -
                                         </button>
-                                        <span className="font-semibold">1</span>
+                                        <span className="font-semibold">{item.quantity}</span>
                                         <button
-                                           onClick={()=> handleIncrement(item_id)}
+                                           onClick={()=> handleIncrement(item._id)}
                                             className="bg-gray-200 hover:bg-gray-300 text-black px-2 py-1 rounded"
                                         >
                                             +

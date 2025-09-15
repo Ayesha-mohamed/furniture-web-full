@@ -13,6 +13,7 @@ import Product from "./Dashboard/product"
 import LogIn from "./pages/login"
 import SignUp from "./pages/signUp"
 import UpdateProduct from "./Dashboard/Updatepr"
+import Message from "./Dashboard/Message"
 
 
 
@@ -121,6 +122,12 @@ const App = () =>{
             <Route path="/update/product/:id" element={
             <Dashboardlayout>
                 <UpdateProduct />
+            </Dashboardlayout>
+            } />
+
+            <Route path="/message" element={
+            <Dashboardlayout>
+                <Message />
             </Dashboardlayout>
             } />
 

@@ -22,6 +22,7 @@ function Product(props) {
     const handleDelete = (id) =>{
         axios.delete(`http://localhost:3000/delete/product/${id}`).then(()=>{
             toast.success("Deleted successfully")
+            handleReadProduct()
         }).catch((err)=>{
             console.log(err);
         })
@@ -39,7 +40,7 @@ function Product(props) {
             <img className='w-full h-60  ' src={`http://localhost:3000/allproductimage/${item.prImage}`} alt={item.prImage} />
             <div className="flex justify-between px-4 mt-3">
                 <h1 className='textt-xl font-semibold '>{item.name}</h1>
-                <h1 className='text-xl font-medium text-red-700'>price</h1>
+                <h1 className='text-xl font-medium text-red-700'>${item.price}</h1>
             </div>
 
                 <h1 className='ml-3 text-xl '>{item.category}</h1>
