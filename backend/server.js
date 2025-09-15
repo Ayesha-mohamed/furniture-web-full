@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require("dotenv").config();
 const productRoute = require('./routers/productRoute');
+const contactRoute = require('./routers/ContactRouter')
 
 const app = express()
 
@@ -18,5 +19,6 @@ mongoose.connect(process.env.db_url).then(()=> console.log("connected to databas
 app.use("/allproductimage", express.static("prImages"))
 
 app.use(productRoute)
+app.use(contactRoute)
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

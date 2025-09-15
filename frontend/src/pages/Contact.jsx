@@ -32,6 +32,7 @@
 import React from 'react';
 
 function Contact() {
+    
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 p-6">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
