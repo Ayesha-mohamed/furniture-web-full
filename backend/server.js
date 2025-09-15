@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 require("dotenv").config();
 const productRoute = require('./routers/productRoute');
 const contactRoute = require('./routers/ContactRouter')
+const userRouter = require("./routers/userRouter")
+const orderRoutes =  require("./routers/orderRoutes")
+const AdminRouter = require(".//routers/adminRouter")
+
 
 const app = express()
 
@@ -19,6 +23,12 @@ mongoose.connect(process.env.db_url).then(()=> console.log("connected to databas
 app.use("/allproductimage", express.static("prImages"))
 
 app.use(productRoute)
+
 app.use(contactRoute)
+
+app.use(userRouter)
+app.use(AdminRouter)
+app.use(userRouter)
+app.use(orderRoutes)
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

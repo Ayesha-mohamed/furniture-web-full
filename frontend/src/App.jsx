@@ -9,6 +9,11 @@ import Addproduct from "./Dashboard/Addproduct"
 import Dashboard from "./Dashboard/Dashboard"
 import Reports from "./Dashboard/Reports"
 import Details from "./pages/Details"
+import Product from "./Dashboard/product"
+import LogIn from "./pages/login"
+import SignUp from "./pages/signUp"
+
+
 
 
 function Mainlayout({children}){
@@ -21,6 +26,7 @@ function Mainlayout({children}){
     </div>
     </>
 }
+
 
 function Dashboardlayout({children}){
     return <>
@@ -41,9 +47,12 @@ const App = () =>{
 
         <Route path="/" element={
             <Mainlayout>
+                
                 <Home />
+           
             </Mainlayout>
             } />
+
         <Route path="/shop" element={
             <Mainlayout>
                 <Shop />
@@ -64,9 +73,29 @@ const App = () =>{
                 <Cart />
             </Mainlayout>
             } />
+        <Route path="/login" element={
+            <Mainlayout>
+                <LogIn />
+            </Mainlayout>
+            } />
+        <Route path="/signUp" element={
+            <Mainlayout>
+                <SignUp />
+            </Mainlayout>
+            } />
         <Route path="/details" element={
             <Mainlayout>
                 <Details />
+            </Mainlayout>
+            } />
+        <Route path="/login" element={
+            <Mainlayout>
+                <LogIn />
+            </Mainlayout>
+            } />
+        <Route path="/signup" element={
+            <Mainlayout>
+                <SignUp />
             </Mainlayout>
             } />
         
@@ -81,6 +110,16 @@ const App = () =>{
             <Route path="/addproduct" element={
             <Dashboardlayout>
                 <Addproduct />
+            </Dashboardlayout>
+            } />
+            <Route path="/product" element={
+            <Dashboardlayout>
+                <Product />
+            </Dashboardlayout>
+            } />
+            <Route path="/update/product/" element={
+            <Dashboardlayout>
+                <Product />
             </Dashboardlayout>
             } />
 
