@@ -38,8 +38,8 @@ function SignUp() {
   };
 
   return (
-    <div className="bg-blue-950 min-h-screen grid place-items-center">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow p-6 mt-10">
+    <div className="bg-cover bg-center w-full h-screen bg-[url('https://i.pinimg.com/736x/5d/0e/ed/5d0eed1f2e5de0a2a0d97a5e5a6d4872.jpg')] flex items-center justify-center">
+      <div className="w-full max-w-md mt-10 bg-white/55 backdrop-blur-lg  rounded-2xl shadow p-6">
         <div className="flex justify-center gap-8 mb-6">
           <button
             onClick={() => setActiveTab("customer")}
