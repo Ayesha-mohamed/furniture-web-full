@@ -269,8 +269,8 @@ function Cart() {
 
 
     return   <>
-            <div className="bg-gray-100 min-h-screen py-10 px-4">
-                <div className="max-w-6xl mx-auto bg-white shadow-md rounded-lg flex flex-col lg:flex-row overflow-hidden">
+            <div className="bg-gray-100 min-h-screen py-10 px-4 ">
+                <div className="max-w-6xl mx-auto bg-white- shadow-md rounded-lg flex flex-col lg:flex-row overflow-hidden mt-24">
                     {/* Left: Cart Items */}
                     <div className="w-full lg:w-2/1 p-6">
                         <h2 className="text-2xl font-semibold mb-4">Shopping Cart</h2>

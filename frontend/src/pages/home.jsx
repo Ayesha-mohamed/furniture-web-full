@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../components/footer';
+import { Link } from 'react-router-dom';
 
 function Home(props) {
+ 
     return (
         <div>
           {/* 1 */}
         <div className="bg-cover bg-center w-full sm:h-[90vh] md:h-screen h-screen bg-[url('https://i.pinimg.com/1200x/90/2d/29/902d29873adecc364c265b10fb2bbdd5.jpg')] flex flex-col items-center justify-center text-center px-4">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white">  Luxury Furniture That Fits <br /> Your Lifestyle  </h1>
-      <button className="mt-8 px-6 sm:px-12 py-2 sm:py-3 text-lg sm:text-2xl md:text-3xl text-white bg-blue-950 rounded-lg"> Show more </button>
+        <button className="mt-8 px-6 sm:px-12 py-2 sm:py-3 text-lg sm:text-2xl  md:text-3xl text-white bg-blue-950 rounded-lg"> Show more </button>
           </div>
        {/* 2 */}
-       <div className="absolute -bottom-32 left-1/2 transform -translate-x-1/2 bg-blue-950 rounded-lg w-[90%] sm:w-[630px] py-4">
+       <div className="absolute -bottom-24 left-1/2 transform -translate-x-1/2 bg-blue-950 rounded-lg w-[90%] sm:w-[630px] py-4">
      <div className="grid grid-cols-2 sm:flex sm:justify-around gap-6 text-center">
     <h1 className="text-white text-sm sm:text-base md:text-lg">  7 <br /> Years <br /> Experience </h1>
     <h1 className="text-white text-sm sm:text-base md:text-lg">  2 <br /> Opened in <br /> Country </h1>
@@ -115,7 +117,7 @@ function Home(props) {
     <img  className="w-full h-52 object-cover"  src="https://i.pinimg.com/736x/89/ea/9a/89ea9a0d49daa9154c82dd5849810881.jpg"  alt="Armchair" />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Armchair</h1>
-     <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
+  <Link to="/shop" > <i class="fa-solid fa-shop text-yellow-600 text-xl sm:text-2xl "></i> </Link>
     </div>
   </div>
 
@@ -124,7 +126,7 @@ function Home(props) {
     <img  className="w-full h-52 object-cover"  src="https://i.pinimg.com/736x/eb/6c/6f/eb6c6f5bf78883af9802198e830e206a.jpg"  alt="Dining"/>
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Dining</h1>
-      <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
+    <Link to="/shop">  <i class="fa-solid fa-shop text-yellow-600 text-xl sm:text-2xl "></i></Link> 
     </div>
   </div>
 
@@ -133,7 +135,7 @@ function Home(props) {
     <img className="w-full h-52 object-cover"  src="https://i.pinimg.com/1200x/ea/3d/75/ea3d75e51cd50b3ea2fc64ceac6ad91c.jpg" alt="Bar Stool"  />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Bar Stool</h1>
-      <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
+    <Link to="/shop">  <i class="fa-solid fa-shop text-yellow-600 text-xl sm:text-2xl "></i></Link>
     </div>
   </div>
 
@@ -142,7 +144,7 @@ function Home(props) {
     <img className="w-full h-52 object-cover" src="https://i.pinimg.com/736x/4e/ea/07/4eea07e50b49174349b2fc4f75f6dcbd.jpg" alt="Office" />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Office</h1>
-      <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
+   <Link to="/shop">  <i class="fa-solid fa-shop text-yellow-600 text-xl sm:text-2xl "></i></Link> 
     </div>
   </div>
 
@@ -151,7 +153,7 @@ function Home(props) {
     <img className="w-full h-52 object-cover" src="https://i.pinimg.com/1200x/31/32/f4/3132f48bab8edecb0eee6690232f80ee.jpg"  alt="Bed Far" />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Bed Far</h1>
-      <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
+  <Link to="/shop">  <i class="fa-solid fa-shop text-yellow-600 text-xl sm:text-2xl "></i> </Link> 
     </div>
   </div>
 
@@ -160,7 +162,7 @@ function Home(props) {
     <img  className="w-full h-52 object-cover"  src="https://i.pinimg.com/1200x/05/40/a6/0540a62dd0626612b775bb1e7c05dff2.jpg"  alt="Dresser" />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Dresser</h1>
-     <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
+   <Link to="/shop">    <i class="fa-solid fa-shop text-yellow-600 text-xl sm:text-2xl "></i></Link>
     </div>
   </div>
 
@@ -169,7 +171,7 @@ function Home(props) {
     <img className="w-full h-52 object-cover" src="https://i.pinimg.com/1200x/89/37/0a/89370a52635f55c6d78ab359508c1bea.jpg"  alt="Vanity T"  />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Vanity T</h1>
-      <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
+      <Link to="/shop" > <i class="fa-solid fa-shop text-yellow-600 text-xl sm:text-2xl "></i></Link>
     </div>
   </div>
 
@@ -178,7 +180,7 @@ function Home(props) {
     <img  className="w-full h-52 object-cover"  src="https://i.pinimg.com/736x/0c/fc/99/0cfc99237c96413b824ba39296a31a59.jpg"  alt="Dresser"  />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Dresser</h1>
-      <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
+   <Link to="/shop">     <i class="fa-solid fa-shop text-yellow-600 text-xl sm:text-2xl "></i> </Link>
     </div>
     </div>
    </div>
