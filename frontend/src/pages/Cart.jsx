@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";  
+import { ToastContainer, toast } from "react-toastify";
 
 function Cart() {
 
@@ -21,6 +22,59 @@ function Cart() {
 
         localStorage.setItem("cart", JSON.stringify(filterData))
         setData(filterData)
+    }
+
+    const TotalPrice = Data.reduce((sum,item) => sum + (Number(item.price) * Number(item.quantity)),0)
+
+
+
+    const handleIncrement = (id) =>{
+      setProducts(pr =>pr.map(
+        item => item._id === id ? {...item, quantity: item.quantity < item.maxQuantity ? item.quantity +1 : item.quantity } : item
+      ))
+    }
+    const handleDecrement = (id) =>{
+      setProducts(pr =>pr.map(
+        item => item._id === id ? {...item, quantity: item.quantity > 1 ? item.quantity -1 : item.quantity } : item
+      ))
+    }
+
+
+    //order
+    const user = localStorage.getItem("user")
+
+    let customerOrder = ""
+
+    if(user){
+        customerOrder = JSON.parse(user).data?.customer.name
+        console.log(customerOrder);
+    }
+
+    const placeOrder = () =>{
+        if(!customerOrder){
+            toast.error("Please log in to place an order")
+            return
+        }
+        
+        axios.post("http://localhost:3000/create/order",{
+            customer: customerOrder,
+            products: Data.map(item =>{
+                return {productId: item._id, quantity: item.quantity}
+            })
+        }).then((res)=>{
+            if(res.data.error){
+                toast.error(res.data.error)
+            }
+            else{
+                toast.success("Order placed successfully")
+                localStorage.removeItem("cart")
+                setData([])
+            }
+            console.log(res.data);
+        }).catch((err)=>{
+            console.log(err);
+
+        })
     }
 
 
@@ -66,13 +120,14 @@ function Cart() {
                                     {/* Quantity Controls */}
                                     <div className="mt-4 md:mt-0 flex items-center gap-2">
                                         <button
+                                        onClick={()=> handleDecrement(item_id)}
                                             className="bg-gray-200 hover:bg-gray-300 text-black px-2 py-1 rounded"
                                         >
                                             -
                                         </button>
-                                        <span className="font-semibold">9</span>
+                                        <span className="font-semibold">1</span>
                                         <button
-                                           
+                                           onClick={()=> handleIncrement(item_id)}
                                             className="bg-gray-200 hover:bg-gray-300 text-black px-2 py-1 rounded"
                                         >
                                             +
@@ -86,7 +141,7 @@ function Cart() {
 
                                     {/* Total per item */}
                                     <div className="mt-4 md:mt-0 text-gray-700">
-                                     
+                                        {`$${item.price * item.quantity}`}
                                     </div>
                                 </div>
                             })
@@ -104,22 +159,26 @@ function Cart() {
 
                         <div className="flex justify-between mb-2 text-gray-700">
                             <span>ITEMS</span>
-                            <span>9</span>
+                            <span>{Data.length}</span>
                         </div>
 
                        
 
                         <div className="flex justify-between font-semibold text-gray-800 border-t pt-3 mb-6">
                             <span>TOTAL COST</span>
-                            <span>$0</span>
+                            <span>${TotalPrice}</span>
                         </div>
 
-                        <button className="w-full bg-[#19183B] text-white py-3 rounded shadow hover:bg-[#3A3A7B] transition duration-300">
+                        <button
+                            onClick={placeOrder}
+                         className="w-full bg-[#19183B] text-white py-3 rounded shadow hover:bg-[#3A3A7B] transition duration-300">
                             CHECKOUT
                         </button>
                     </div>
                 </div>
             </div>
+                  <ToastContainer position="top-right" autoClose={2000} />
+
         </>
 
   

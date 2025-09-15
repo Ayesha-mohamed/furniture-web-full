@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { act, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import{ ToastContainer, toast} from "react-toastify"
  
@@ -9,21 +9,20 @@ import{ ToastContainer, toast} from "react-toastify"
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-
+  const [activeTab, setActiveTab] = useState("customer")
 
   const navigate = useNavigate()
 
   const handleLogIn = (e) =>{
     e.preventDefault()
-    axios.post("http://localhost:3000/create/userlogin",{
-      email: email,
-      password: password
-    }).then((res)=>{
-      toast.success("login success")
+    const links = activeTab === "customer" ? "http://localhost:3000/create/userlogin" : "http://localhost:3000/login/admin"
+    const info = activeTab === "customer" ? {email: email, password: password} : {email: email, password: password}
+    axios.post(links, info).then((res)=>{
+      toast.success(`${activeTab}login success`)
       setTimeout(()=>{
-        navigate("/shop")
+        navigate(activeTab === "customer" ?  "/" : "/dashboard")
       },2000)
-      localStorage.setItem("user", JSON.stringify(res.data))
+      localStorage.setItem(activeTab === "customer" ? "user" : "admin", JSON.stringify(res))
 
       console.log(res.data);
     })
@@ -34,9 +33,11 @@ import{ ToastContainer, toast} from "react-toastify"
     <div className="bg-cover bg-center w-full h-screen bg-[url('https://i.pinimg.com/736x/5d/0e/ed/5d0eed1f2e5de0a2a0d97a5e5a6d4872.jpg')] flex items-center justify-center ">
       <div className="w-full max-w-md bg-white/55 backdrop-blur-lg  rounded-2xl shadow p-6     ">
         {/* Buttons */}
-        <div className="flex justify-center gap-4 mb-6">
-          <h2>Customer</h2>
-          <h2>Admin</h2>
+        <div className="flex justify-center gap-10 mb-6">
+          <button onClick={()=> setActiveTab === "customer"} className={`${activeTab === "customer" ? "text-blue-600" : ""}`} >Customer</button>
+          <button  onClick={()=> setActiveTab("admin")} className={`${activeTab === "admin" ? "text-blue-600" : ""}`} >Admin</button>
+
+          {/* <button onClick={()=> setActiveTab === "admin"} >admin</button> */}
         </div>
         <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
 
@@ -54,7 +55,7 @@ import{ ToastContainer, toast} from "react-toastify"
           </div>
 
           <button onClick={(e)=> handleLogIn(e)} type="submit"  className="w-full bg-blue-950 text-white py-2 rounded-lg hover:bg-blue-900 transition" >
-            Login
+         {activeTab === "customer" ? "Log In as Customer" : "Log In as Admin"}
           </button>
         </form>
       </div>
