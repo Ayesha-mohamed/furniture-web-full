@@ -32,7 +32,7 @@ import Footer from "../components/footer";
 
   return (
     <>
-    <div className="bg-cover bg-center w-full h-screen bg-[url('https://i.pinimg.com/736x/5d/0e/ed/5d0eed1f2e5de0a2a0d97a5e5a6d4872.jpg')] flex items-center justify-center">
+    <div className="bg-cover bg-center w-full h-screen bg-[url('https://i.pinimg.com/1200x/ab/a4/13/aba41392d1131949a8bed12fa287fc85.jpg')] flex items-center justify-center">
       <div className="w-full max-w-md bg-white/55 backdrop-blur-lg  rounded-2xl shadow p-6     ">
         {/* Buttons */}
         <div className="flex justify-center gap-10 ">

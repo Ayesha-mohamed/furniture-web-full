@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function Footer() {
   return (
     <div className="bg-blue-950 w-full px-10 py-8 text-white ">
@@ -13,10 +15,10 @@ function Footer() {
         <div>
           <h2 className="text-xl font-semibold mb-2">Navigation</h2>
           <ul className="space-y-1 text-gray-400 text-sm">
-            <li>Home</li>
-            <li>About</li>
-            <li>Shop</li>
-            <li>Contact</li>
+        <Link to="/" >   <li>Home</li></Link>
+        <Link to="/About"> <li>About</li></Link>    
+         <Link to="/shop"><li>Shop</li></Link>   
+        <Link to="/Contact"> <li>Contact</li> </Link> 
           </ul>
         </div>
 

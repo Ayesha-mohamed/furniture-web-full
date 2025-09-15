@@ -115,7 +115,7 @@ function Home(props) {
     <img  className="w-full h-52 object-cover"  src="https://i.pinimg.com/736x/89/ea/9a/89ea9a0d49daa9154c82dd5849810881.jpg"  alt="Armchair" />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Armchair</h1>
-      <i className="fa-solid fa-plus text-yellow-600 text-xl sm:text-2xl"></i>
+     <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
     </div>
   </div>
 
@@ -124,7 +124,7 @@ function Home(props) {
     <img  className="w-full h-52 object-cover"  src="https://i.pinimg.com/736x/eb/6c/6f/eb6c6f5bf78883af9802198e830e206a.jpg"  alt="Dining"/>
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Dining</h1>
-      <i className="fa-solid fa-plus text-yellow-600 text-xl sm:text-2xl"></i>
+      <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
     </div>
   </div>
 
@@ -133,7 +133,7 @@ function Home(props) {
     <img className="w-full h-52 object-cover"  src="https://i.pinimg.com/1200x/ea/3d/75/ea3d75e51cd50b3ea2fc64ceac6ad91c.jpg" alt="Bar Stool"  />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Bar Stool</h1>
-      <i className="fa-solid fa-plus text-yellow-600 text-xl sm:text-2xl"></i>
+      <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
     </div>
   </div>
 
@@ -142,7 +142,7 @@ function Home(props) {
     <img className="w-full h-52 object-cover" src="https://i.pinimg.com/736x/4e/ea/07/4eea07e50b49174349b2fc4f75f6dcbd.jpg" alt="Office" />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Office</h1>
-      <i className="fa-solid fa-plus text-yellow-600 text-xl sm:text-2xl"></i>
+      <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
     </div>
   </div>
 
@@ -151,7 +151,7 @@ function Home(props) {
     <img className="w-full h-52 object-cover" src="https://i.pinimg.com/1200x/31/32/f4/3132f48bab8edecb0eee6690232f80ee.jpg"  alt="Bed Far" />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Bed Far</h1>
-      <i className="fa-solid fa-plus text-yellow-600 text-xl sm:text-2xl"></i>
+      <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
     </div>
   </div>
 
@@ -160,7 +160,7 @@ function Home(props) {
     <img  className="w-full h-52 object-cover"  src="https://i.pinimg.com/1200x/05/40/a6/0540a62dd0626612b775bb1e7c05dff2.jpg"  alt="Dresser" />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Dresser</h1>
-      <i className="fa-solid fa-plus text-yellow-600 text-xl sm:text-2xl"></i>
+     <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
     </div>
   </div>
 
@@ -169,7 +169,7 @@ function Home(props) {
     <img className="w-full h-52 object-cover" src="https://i.pinimg.com/1200x/89/37/0a/89370a52635f55c6d78ab359508c1bea.jpg"  alt="Vanity T"  />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Vanity T</h1>
-      <i className="fa-solid fa-plus text-yellow-600 text-xl sm:text-2xl"></i>
+      <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
     </div>
   </div>
 
@@ -178,7 +178,7 @@ function Home(props) {
     <img  className="w-full h-52 object-cover"  src="https://i.pinimg.com/736x/0c/fc/99/0cfc99237c96413b824ba39296a31a59.jpg"  alt="Dresser"  />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Dresser</h1>
-      <i className="fa-solid fa-plus text-yellow-600 text-xl sm:text-2xl"></i>
+      <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
     </div>
     </div>
    </div>
@@ -203,10 +203,8 @@ function Home(props) {
     </div>
    </div>
 
-       {/* commants */}
-
        {/* Commits Section */}
-<div className="mt-40 px-4 md:px-10">
+<div className="mt-40 px-4 md:px-10 md:mb-10 mb-10">
   <h1 className="text-blue-950 text-2xl font-semibold text-center md:text-left">  What people are saying about Us</h1>
 
   <div className="flex flex-col md:flex-row mt-10 items-center md:items-start">
