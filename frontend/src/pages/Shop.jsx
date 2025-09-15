@@ -62,7 +62,7 @@ function Shop(props) {
 
     return (
         <div className='mt-0 mb-20'>
-            <div className='bg-center bg-cover w-full h-screen' style={{backgroundImage: "url('https://i.pinimg.com/736x/e7/73/b0/e773b09f1432bdf6c73695708fd15f3a.jpg')"}}>
+            <div className='bg-center bg-cover w-full h-[550px]' style={{backgroundImage: "url('https://i.pinimg.com/736x/e7/73/b0/e773b09f1432bdf6c73695708fd15f3a.jpg')"}}>
                 <h1 className='text-6xl font-bold text-white text-center pt-40 '>shop every where </h1>
                 
                 

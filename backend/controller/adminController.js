@@ -28,41 +28,7 @@
 // }
 
 // // 
-// const adminlogin =  async (res,req) => {
-//     try{
-//         const{email, password} = req.body
-    
-    
-//         const existEmail = await adminModel.findOne({ email })
-//         if (!existEmail) {
-//             return res.status(400).json({ error: "invalid email" })
-//         } 
 
-//           const checkPassword = await bcyrpt.compare(password,existEmail.password )
-//         if(!checkPassword){
-//              return res.status(400).json({ error: "invalid password" })
-
-//         }
-
-//           const token = jwt.sign(
-//             {id: existEmail._id, name: existEmail.name, email: existEmail.email, role: existEmail.role},
-//             process.env.jwt_secret,
-//             {expiresIn: "1h"}
-//         )
-
-//            res.send({
-//             message: "succes login",
-//            admin: {
-//                 name: existEmail.name,
-//                 email: existEmail.email,
-//                 role: existEmail.role
-
-//             },
-//             token
-//         })
-//     } catch(error){
-//         res.status(400).json({error: "server error"})
-// }
 
 // module.exports = {createAdmin, adminlogin}
 
@@ -97,6 +63,10 @@ const createAdmin = async (req, res) => {
   }
 };
 
+
+
+
+//
 const adminlogin = async (req, res) => {
   try {
     const { email, password } = req.body;

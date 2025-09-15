@@ -9,6 +9,13 @@ function Header(props) {
     localStorage.removeItem("user")
   }
 
+  const cartCount = JSON.parse(localStorage.getItem("cart")) || []
+
+  const count = cartCount.length
+
+  
+
+
   return (
     <div>
       <div className="flex justify-between px-20 items-center p-4 ">
@@ -43,7 +50,7 @@ function Header(props) {
         <div className="flex items-center gap-10">
 
           <NavLink to='/cart'> <i className="fa-solid fa-cart-shopping text-3xl"></i></NavLink>
-            <span className='bg-red-500 text-white rounded-full px-2 absolute right-16 -mt-3 ml-3 text-sm'>0</span>
+            <span className='bg-red-500 text-white rounded-full px-2 absolute right-16 -mt-3 ml-3 text-sm'>{count}</span>
 
         </div>
       </div>
