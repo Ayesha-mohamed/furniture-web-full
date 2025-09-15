@@ -27,7 +27,7 @@ function About(props) {
                     <i className="fa-regular fa-clock text-2xl font-semibold  text-gray-400"></i>
                     <p className='text-2xl font-semibold'> Shop Online</p>
                 </div>
-                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit..</p>
+                <p>Our online furniture shop, where you can find stylish and comfortable furniture for every room in your home.</p>
         </div>
            
             <div>
@@ -35,15 +35,14 @@ function About(props) {
                     <i className="fa-solid fa-briefcase text-2xl font-semibold  text-gray-400" ></i>
                     <p className='text-2xl font-semibold'> Free Shipping</p>
                 </div>
-                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit..</p>
-        
+                <p>We offer free shipping on all orders, so you can shop for your favorite furniture without worrying about extra costs.</p>        
             </div>
             <div>
                 <div className='flex   items-center gap-2'>
                     <i className="fa-solid fa-credit-card text-2xl font-semibold text-gray-400"></i>
                     <p className='text-2xl font-semibold'> Return Policy</p>
                 </div>
-                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur adipisicing elit..</p>
+                <p>We want you to be happy with your purchase. If you are not satisfied, you can return your items within 30 days for a full refund or exchange. Returns are easy and hassle-free.</p>
         </div>
 
     
@@ -52,7 +51,7 @@ function About(props) {
                     <i className="fa-regular fa-file-invoice-dollar text-2xl font-semibold text-gray-400"></i>
                     <p className='text-2xl font-semibold'> Payment</p>
                 </div>
-                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit..</p>
+                <p>We offer secure and easy payment options for all orders. You can pay using credit cards, debit cards, or online payment methods.</p>
         </div>
         </div>
 
@@ -69,7 +68,7 @@ function About(props) {
         <div className='w-full sm:[90vh] px-7 py-4  sm:flex   flex-col-3 justify-around gap-20 mt-20'>
         <div>
             <h2 className='text-2xl font-semibold'>Functionality meets perfection</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse massa libero, <br /> mattis volutpat id. Egestas adipiscing placerat eleifend a nascetur. Mattis proin enim, nam porttitor vitae. </p>
+            <p>Welcome to our online furniture store, where style, comfort, and quality come together to create the perfect home environment. We offer a wide range of furniture, including sofas, beds, dining tables, chairs, <br /> and storage solutions, all designed to suit different tastes and lifestyles. Each piece is carefully crafted using durable materials to ensure long-lasting use while adding elegance to your living space.</p>
         </div>
 
        
