@@ -33,8 +33,8 @@ function SignUp() {
   };
 
   return (
-    <div className="bg-blue-950 min-h-screen grid place-items-center">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow p-6 mt-10">
+    <div className="bg-cover bg-center w-full h-screen bg-[url('https://i.pinimg.com/1200x/95/1a/07/951a078a6c4e941686cf94de16303b72.jpg')] flex items-center justify-center">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow  bg-white/55 backdrop-blur-lg  p-6 mt-20">
         <div className="flex justify-center gap-4 mb-6">
           <h2>Customer</h2>
           <h2>Admin</h2>

@@ -14,6 +14,8 @@ import LogIn from "./pages/login"
 import SignUp from "./pages/signUp"
 
 
+
+
 function Mainlayout({children}){
     return <>
     <div className="l">
@@ -24,6 +26,7 @@ function Mainlayout({children}){
     </div>
     </>
 }
+
 
 function Dashboardlayout({children}){
     return <>
@@ -44,9 +47,12 @@ const App = () =>{
 
         <Route path="/" element={
             <Mainlayout>
+                
                 <Home />
+           
             </Mainlayout>
             } />
+
         <Route path="/shop" element={
             <Mainlayout>
                 <Shop />

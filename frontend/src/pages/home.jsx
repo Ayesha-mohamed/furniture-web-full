@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../components/footer';
 
 function Home(props) {
     return (
@@ -223,8 +224,9 @@ function Home(props) {
             </div>
            <img className='w-80 h-72 rounded-lg ml-64' src="https://i.pinimg.com/736x/20/6e/71/206e7131ea0993c198a6242426165435.jpg" alt="" />
           </div>
-          
+          <Footer/>
         </div>
+        
         
     );
 }

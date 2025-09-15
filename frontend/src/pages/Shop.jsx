@@ -63,19 +63,17 @@ function Shop(props) {
     return (
         <div className='mt-0 mb-20'>
             <div className='bg-center bg-cover w-full h-screen' style={{backgroundImage: "url('https://i.pinimg.com/736x/e7/73/b0/e773b09f1432bdf6c73695708fd15f3a.jpg')"}}>
-                <h1 className='text-6xl font-bold text-white text-center pt-40 '>shop every where </h1>
-                
-                
+                <h1 className='text-6xl font-bold text-white text-center pt-40 '>shop every where </h1>   
             </div>
 
-            <div className=" absolute right-20 flex gap-5 items-center">
+            <div className=" absolute right-20 flex gap-5 items-center mt-8">
                 <input style={{display: open === false ? "none" : ""}} onChange={handleSearch} className='w-72 h-10 rounded-lg border-2 border-slate-800 px-5 text-xl ' type="search" placeholder='searching...' />
               <i onClick={handleOpen} className='fa-solid fa-magnifying-glass text-2xl '></i>
 
             </div>
 
             <div className="mt-20">
-              <h1 className='text-4xl font-bold text-center mb-10 mt-20' >Our Products</h1>
+              <h1 className='text-4xl font-bold text-center mb-10 mt-20 text-yellow-700' >Our Products</h1>
 
             </div>
 

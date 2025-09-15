@@ -12,7 +12,7 @@ function Header(props) {
   return (
     <div>
       <div className="flex justify-between px-20 items-center p-4 ">
-        <h1 className='text-4xl font-bold  '>Furni<span className=''>ture</span></h1>
+        <h1 className='text-4xl font-bold  '>Furni<span className='text-yellow-800'>ture</span></h1>
         <ul className='flex gap-10 '>
         <NavLink to='/'><li>Home</li></NavLink>
         <NavLink to='/about' >  <li>About</li></NavLink>
