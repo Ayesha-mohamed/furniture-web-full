@@ -26,7 +26,6 @@ const userShema = mongoose.Schema({
    
     totalUser: {
         type: Number,
-        required: true
     }
     
     

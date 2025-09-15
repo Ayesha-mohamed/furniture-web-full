@@ -62,7 +62,9 @@ function Shop(props) {
     }
 
     return (
-        <div className='mt-0 mb-0'>
+        <>
+
+        <div className='mt-0 mb-20'>
             <div className='bg-center bg-cover w-full h-[550px]' style={{backgroundImage: "url('https://i.pinimg.com/736x/e7/73/b0/e773b09f1432bdf6c73695708fd15f3a.jpg')"}}>
                 <h1 className='text-6xl font-bold text-white text-center pt-40 '>shop every where </h1>
                 
@@ -81,9 +83,10 @@ function Shop(props) {
             </div>
 
 
-            <div className="grid sm:grid-cols-3 grid-cols-1 justify-center gap-10 mt-20 ml-10 ">
+            {/* <div className="flex flex-wrap justify-center gap-10 mt-20 ml-10 "> */}
 
-           
+                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 justify-center mb-10 px-10">
+
         {
          data.length > 0 ?   data.map((item)=>{
                 return <>
@@ -113,9 +116,10 @@ function Shop(props) {
         }
 
            </div>
-           <Footer />
         </div>
+        <Footer/>
+        </>
     );
 }
 
-export default Shop;
+export default Shop;

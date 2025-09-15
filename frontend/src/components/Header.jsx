@@ -20,6 +20,7 @@ function Header(props) {
     <div>
       <div className="flex justify-between px-20 items-center p-4 ">
         <h1 className='text-4xl font-bold  '>Furni<span className='text-yellow-800'>ture</span></h1>
+        
         <ul className='flex gap-10 '>
         <NavLink to='/'><li>Home</li></NavLink>
         <NavLink to='/about' >  <li>About</li></NavLink>
@@ -29,9 +30,10 @@ function Header(props) {
 
     {
       getUser ? <div className="flex ">
-        <div className="w-10 h-10 rounded-full bg-blue-600 text-center mr-5">
+        <div className="w-10 h-10 rounded-full bg-yellow-800 text-center mr-5">
 
         <h1 className='  text-center text-2xl font-bold text-black '>{JSON.parse(getUser).data?.customer.name[0]}</h1>
+        <h1 className=' text-white text-center pt-2 '>{JSON.parse(getUser).data?.customer.name[0]}</h1>
         </div>
                          
  <Link to='/login'> <button onClick={handleLogout}  className=' px-3 py-2 mr-10' ><i className="fa-solid fa-right-from-bracket text-2xl "></i></button></Link>

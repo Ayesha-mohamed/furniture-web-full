@@ -8,7 +8,7 @@ function UpdateProduct() {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
   const [category, setCategory] = useState("");
-  const [description, setDescription] = useState("");
+  // const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState("");
 
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ function UpdateProduct() {
     productData.append("name", name);
     productData.append("price", price);
     productData.append("category", category);
-    productData.append("description", description);
+    // productData.append("description", description);
     productData.append("quantity", quantity);
     productData.append("prImg", image);
 
@@ -56,7 +56,7 @@ function UpdateProduct() {
           <input value={price} onChange={(e)=> setPrice(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='price' /><br /><br />
           <input value={quantity} onChange={(e)=> setQuantity(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='quantity' /><br /><br />
           <input value={category} onChange={(e)=> setCategory(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='category' /><br /><br />
-          <input value={description} onChange={(e)=> setDescription(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='description' /><br /><br />
+          {/* <input value={description} onChange={(e)=> setDescription(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='description' /><br /><br /> */}
           <input onChange={(e)=> setImage(e.target.files[0])} className='file:w-42 file:h-10' type="file" /><br /><br />
           <button type="submit" className='w-80 h-10 bg-blue-500 text-white rounded-xl'>Update Product</button>
         </form>
