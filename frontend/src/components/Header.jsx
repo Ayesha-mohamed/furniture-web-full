@@ -19,7 +19,7 @@ function Header(props) {
   return (
     <div>
       <div className="flex justify-between px-20 items-center p-4 ">
-        <h1 className='text-4xl font-bold  '>Furni<span className=''>ture</span></h1>
+        <h1 className='text-4xl font-bold  '>Furni<span className='text-yellow-800'>ture</span></h1>
         <ul className='flex gap-10 '>
         <NavLink to='/'><li>Home</li></NavLink>
         <NavLink to='/about' >  <li>About</li></NavLink>
@@ -34,7 +34,7 @@ function Header(props) {
         <h1 className='  text-center text-2xl font-bold text-black '>{JSON.parse(getUser).data?.customer.name[0]}</h1>
         </div>
                          
- <Link to='/login'> <button onClick={handleLogout}  className='border-2 px-3 py-2 mr-10' ><i className='fa-solid fa-user mr-2'></i>LogOut</button></Link>
+ <Link to='/login'> <button onClick={handleLogout}  className=' px-3 py-2 mr-10' ><i className="fa-solid fa-right-from-bracket text-2xl "></i></button></Link>
 
       </div>
 

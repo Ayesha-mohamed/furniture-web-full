@@ -45,7 +45,7 @@ function Product(props) {
                 <h1 className='ml-3 text-xl '>{item.category}</h1>
                 <div className="flex justify-between px-4">
 
-             <Link to={`/update/product`}>   <button className='bg-blue-600 text-white px-3 py-1 rounded-md mt-3'>Edit</button></Link>
+             <Link to={`/update/product/${item._id}`}>   <button className='bg-blue-600 text-white px-3 py-1 rounded-md mt-3'>Edit</button></Link>
                 <button onClick={()=> handleDelete(item._id)} className='bg-red-600 text-white px-3 py-1 rounded-md mt-3 ml-3'>Delete</button>
                 </div>
            </div>

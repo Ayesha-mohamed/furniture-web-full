@@ -29,7 +29,7 @@ function Reports(props) {
         <div className='ml-48 p-10'>
             <div className="l">
                 <h1 className='text-3xl font-bold'>Reports</h1>
-                <div className="grid grid-cols-2 gap-20">
+                <div className="flex gap-10">
 
                 <div className="k">
                     <h1 className='text-2xl font-semibold mt-10'>Total Sales</h1>
@@ -44,14 +44,14 @@ function Reports(props) {
                         <h1 className='text-4xl font-bold'><i className='fa-solid fa-user'></i>{totalcustomer}</h1>
                     </div>
                 </div>
-
-                {/*report3 messages */}
+{/* 
+                report3 messages
                 <div className="k">
                     <h1 className='text-2xl font-semibold mt-10'>Total customers</h1>
                      <div className="bg-blue-950 w-72 h-32 rounded-lg text-white flex items-center justify-center mt-5">
                         <h1 className='text-4xl font-bold'><i className='fa-solid fa-user'></i>{totalcustomer}</h1>
                     </div>
-                </div>
+                </div> */}
 
 
            </div>

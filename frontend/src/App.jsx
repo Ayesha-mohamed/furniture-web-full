@@ -12,6 +12,9 @@ import Details from "./pages/Details"
 import Product from "./Dashboard/product"
 import LogIn from "./pages/login"
 import SignUp from "./pages/signUp"
+import UpdateProduct from "./Dashboard/Updatepr"
+
+
 
 
 function Mainlayout({children}){
@@ -24,6 +27,7 @@ function Mainlayout({children}){
     </div>
     </>
 }
+
 
 function Dashboardlayout({children}){
     return <>
@@ -44,9 +48,12 @@ const App = () =>{
 
         <Route path="/" element={
             <Mainlayout>
+                
                 <Home />
+           
             </Mainlayout>
             } />
+
         <Route path="/shop" element={
             <Mainlayout>
                 <Shop />
@@ -111,9 +118,9 @@ const App = () =>{
                 <Product />
             </Dashboardlayout>
             } />
-            <Route path="/update/product/" element={
+            <Route path="/update/product/:id" element={
             <Dashboardlayout>
-                <Product />
+                <UpdateProduct />
             </Dashboardlayout>
             } />
 
