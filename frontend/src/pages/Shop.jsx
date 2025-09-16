@@ -200,7 +200,7 @@ function Shop(props) {
                 
             </div>
 
-            <div className=" absolute right-20 flex gap-5 items-center">
+            <div className=" absolute right-20 flex gap-5 items-center mt-20">
                 <input style={{display: open === false ? "none" : ""}} onChange={handleSearch} className='w-72 h-10 rounded-lg border-2 border-slate-800 px-5 text-xl ' type="search" placeholder='searching...' />
               <i onClick={handleOpen} className='fa-solid fa-magnifying-glass text-2xl '></i>
 

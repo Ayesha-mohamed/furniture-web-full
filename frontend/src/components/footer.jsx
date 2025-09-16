@@ -19,7 +19,7 @@ function Footer() {
         <Link to="/About"> <li>About</li></Link>    
          <Link to="/shop"><li>Shop</li></Link>   
         <Link to="/Contact"> <li>Contact</li> </Link> 
-        <Link to="/dashboard"> <li>Admin login</li> </Link> 
+        {/* <Link to="/dashboard"> <li>Admin login</li> </Link>  */}
           </ul>
         </div>
 
