@@ -52,6 +52,7 @@ const createAdmin = async (req, res) => {
       name,
       email,
       password: hashPassword,
+      role : "admin"
     });
 
     await newData.save();
@@ -89,7 +90,7 @@ const adminlogin = async (req, res) => {
         role: existEmail.role,
       },
       process.env.JWT_SECRET, 
-      { expiresIn: "1h" }
+      { expiresIn: "7d" }
     );
 
     res.send({

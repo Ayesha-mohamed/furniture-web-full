@@ -246,7 +246,7 @@ function Cart() {
             return
         }
         
-        axios.post("http://localhost:3000/create/order",{
+        axios.post("https://farnilux-backend.onrender.com/create/order",{
             customer: customerOrder,
             products: Data.map(item =>{
                 return {productId: item._id, quantity: item.quantity}
@@ -289,6 +289,11 @@ function Cart() {
                                 >
                                     {/* Product Details */}
                                     <div className="flex items-center gap-4 w-full md:w-40">
+                                        {/* <img
+                                            // src={`https://farnilux-backend.onrender.com/allproductimage/${item.prImage}`}
+                                            alt=""
+                                            className="w-20 h-20 object-contain"
+                                        /> */}
                                         <img
                                             src={`http://localhost:3000/allproductimage/${item.prImage}`}
                                             alt=""

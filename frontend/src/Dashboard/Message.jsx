@@ -1,18 +1,22 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
 
 function Message(props) {
 
     const [message, setMessage] = useState([])
 
     const handlePost = () =>{
-        axios.get("http://localhost:3000/read/contact").then((res)=>{
+        axios.get("https://farnilux-backend.onrender.com/read/contact").then((res)=>{
             setMessage(res.data)
         })
     }
+    useEffect(()=>{
+        handlePost()
+     },[])
 
     return (
-        <div className='ml-[20%] pt-10'>
+        <div className='ml-[20%]  flex flex-wrap gap-5 pt-10'>
 
             {
               message.length > 0 ?  message.map((item)=>{

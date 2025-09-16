@@ -11,7 +11,7 @@ function Contact() {
 
   const handleContact = (e) =>{
     e.preventDefault();
-    axios.post("http://localhost:3000/create/contact",{
+    axios.post("https://farnilux-backend.onrender.com/create/contact",{
       "name": name,
       "email": email,
       "message": message
