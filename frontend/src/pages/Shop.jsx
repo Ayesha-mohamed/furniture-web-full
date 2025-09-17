@@ -348,19 +348,20 @@ function Shop(props) {
         {
          data.length > 0 ?   data.map((item)=>{
                 return <>
-           <NavLink to='/desc'> <div className="w-80 h-[420px] min-h-[300px] ml-0 shadow-md  bg-gray-100 rounded-lg p- hover:scale-105 duration-300 cursor-pointer " key={item._id}>
+           {/* <NavLink to={`/desc/${item._id}`}>  */}
+           <div className="w-80 h-[470px] min-h-[300px] ml-0 shadow-md  bg-gray-100 rounded-lg p- hover:scale-105 duration-300 cursor-pointer " key={item._id}>
               
                 <img className='w-72 h-80 object-cover  mb-5' src={`http://localhost:3000/allproductimage/${item.prImage}`} alt={item.prImage} />
-               <div className="text-center justify-around mt-3 ">
+               <div className="text-center justify-around mt-3 flex ">
                <h1 className='text-xl font-medium'>{item.name}</h1>
                 <h1 className='text-2xl  font-semibold mt-1 text-red-600  '>${item.price}</h1>  
                </div>
                 <div className="text-center mt-5">
                     {/* <button onClick={()=> handleAddtoCart(item)} className='bg-[#19183B] border-2 border-none text-2xl text-white rounded-2xl px-10 py-2  '>Add to cart</button> */}
-                    {/* <button onClick={()=> handleAddtoCart(item)} className='bg-[#19183B] border-2 border-none text-2xl text-white rounded-2xl px-10 py-2  '>Add to cart</button> */}
+                    <button onClick={()=> handleAddtoCart(item)} className='bg-[#19183B] border-2 border-none text-2xl text-white rounded-2xl px-10 py-2  '>Add to cart</button>
                     </div> 
               
-            </div></NavLink> 
+            </div>
                </> 
             })
             :

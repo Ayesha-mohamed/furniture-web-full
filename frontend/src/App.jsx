@@ -108,7 +108,7 @@ const App = () =>{
             } />
 
 
-            <Route path="/desc" element={
+            <Route path="/desc/:id" element={
             <Mainlayout>
                 <Description />
             </Mainlayout>
