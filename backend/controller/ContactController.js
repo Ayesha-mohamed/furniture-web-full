@@ -58,5 +58,17 @@ const readContact = async (req, res) =>{
     }
 }
 
+//delete
+const deleteMessage = async (req, res) =>{
+    try {
+        const deleted = await ContactModel.deleteOne({_id: req.params.id})
+        if(deleted){
+            res.send(deleted)
+        }
+    } catch (error) {
+        res.status(400).json({message: message.error})
+    }
+}
 
-module.exports = {createContact,readContact}
+
+module.exports = {createContact,readContact, deleteMessage}

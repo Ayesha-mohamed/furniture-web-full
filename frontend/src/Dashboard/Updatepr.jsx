@@ -107,7 +107,8 @@ function UpdateProduct() {
     }
 
     // ✅ Correct axios.put usage (send form data, headers in config)
-    axios.put(`https://farnilux-backend.onrender.com/update/product/${id}`, productData, {
+    axios.put(`https://localhost:3000/update/product/${id}`, productData, {
+    // axios.put(`https://farnilux-backend.onrender.com/update/product/${id}`, productData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       },
@@ -151,22 +152,24 @@ function UpdateProduct() {
   return (
     <div className='flex justify-center items-center h-screen '>
       <div className="l">
-        <form onSubmit={handleSubmit} className='w-96 border-2 border-slate-800 p-10 rounded-xl shadow-lg'>
+        {/* <form onSubmit={handleSubmit} className='w-96 border-2 border-slate-800 p-10 rounded-xl shadow-lg'> */}
+        <form className='w-96 border-2 border-slate-800 p-10 rounded-xl shadow-lg'>
           <input value={name} onChange={(e)=> setName(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='add productName' /><br /><br />
           <input value={price} onChange={(e)=> setPrice(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='price' /><br /><br />
           {/* <input value={quantity} onChange={(e)=> setQuantity(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='quantity' /><br /><br /> */}
 
-          {/* ✅ Show old image if available */}
+         
           {image && typeof image === "string" && (
             <div className="mb-3">
               <p className='text-sm text-gray-600'>Current Image:</p>
               <img src={`https://farnilux-backend.onrender.com/uploads/${image}`} alt="product" className="w-32 h-32 object-cover rounded-lg border mb-2" />
+              {/* <img src={`https://farnilux-backend.onrender.com/uploads/${image}`} alt="product" className="w-32 h-32 object-cover rounded-lg border mb-2" /> */}
             </div>
           )}
 
-          {/* ✅ Allow selecting new image */}
+         
           <input onChange={(e)=> setImage(e.target.files[0])} className='file:w-42 file:h-10' type="file" /><br /><br />
-          <button type="submit" className='w-80 h-10 bg-blue-500 text-white rounded-xl'>Update Product</button>
+          <button type="submit" onChange={(e)=> handleSubmit(e)} className='w-80 h-10 bg-blue-500 text-white rounded-xl'>Update Product</button>
         </form>
       </div>
 

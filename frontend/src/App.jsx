@@ -13,8 +13,12 @@ import Product from "./Dashboard/product"
 import LogIn from "./pages/login"
 import SignUp from "./pages/signUp"
 import UpdateProduct from "./Dashboard/Updatepr"
-import Message from "./Dashboard/Message"
+// import Message from "./Dashboard/Message"
+
 import Description from "./pages/describtion"
+
+import DashboardChart from "./Dashboard/Chart"
+
 
 
 
@@ -102,11 +106,21 @@ const App = () =>{
             </Mainlayout>
             } />
 
+
             <Route path="/describtion" element={
             <Mainlayout>
                 <Description />
             </Mainlayout>
             } />
+
+
+        {/* <Route path="/details" element={
+            <Mainlayout>
+                <Detail />
+            </Mainlayout>
+            } /> */}
+        
+
 
 {/*dashboard */}
             <Route path="/dashboard" element={
@@ -116,9 +130,8 @@ const App = () =>{
             } />
 
             <Route path="/addproduct" element={
-            <Dashboardlayout>
+          
                 <Addproduct />
-            </Dashboardlayout>
             } />
             <Route path="/product" element={
             <Dashboardlayout>
@@ -130,12 +143,14 @@ const App = () =>{
                 <UpdateProduct />
             </Dashboardlayout>
             } />
-
+{/* 
             <Route path="/message" element={
             <Dashboardlayout>
                 <Message />
             </Dashboardlayout>
-            } />
+            } /> */}
+
+            <Route path='/chart' element={<DashboardChart />} />
 
     </Routes>
    
