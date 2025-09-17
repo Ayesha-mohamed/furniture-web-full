@@ -2,9 +2,33 @@ const productSchema = require("../models/productModel")
 
 
 // add product
+// const createProduct = async (req, res) => {
+//     try {
+//         const { name, price, description, prImage, category } = req.body;
+
+//         const newProduct = productSchema({
+//             name: name,
+//             price: price,
+//             description: description,
+//             prImage: prImage,
+//             category: category,
+//             prImage: req.file ? req.file.filename : undefined
+//         })
+
+//         await newProduct.save();
+//         res.send(newProduct)
+        
+//     } catch (error) {
+//         res.status(400).json({ message: error.message })
+//     }
+// }
+
+
+
+// add product
 const createProduct = async (req, res) => {
     try {
-        const { name, price, description, prImage, category } = req.body;
+        const { name, price, description, quantity, category } = req.body;
 
         const newProduct = productSchema({
             name: name,
@@ -12,6 +36,7 @@ const createProduct = async (req, res) => {
             description: description,
             prImage: prImage,
             category: category,
+            quantity: quantity,
             prImage: req.file ? req.file.filename : undefined
         })
 

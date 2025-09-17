@@ -8,7 +8,8 @@ function Shop(props) {
     const [data, setData] = useState([])
     // console.log(data);
     const [open, setOpen] = useState(false)
-
+    const [category, setCategory] = useState("")   // categories state
+    console.log(category)
     const handleOpen = () =>{
         if(open === false){
             setOpen(true)
@@ -19,14 +20,16 @@ function Shop(props) {
     }
 
     const handleRead = () =>{
-        axios.get("http://localhost:3000/read/allproduct").then((res)=>{
+        axios.get("http://localhost:3000/read/allproduct",{
+            "category":category
+        }).then((res)=>{
             setData(res.data)
         })
     }
 
     useEffect(()=>{
         handleRead()
-    },[])
+    },[category])
 
     //searching...
     const handleSearch = (e) =>{
@@ -82,6 +85,14 @@ function Shop(props) {
 
             </div>
 
+            {/* Categories filter */}
+            <div className="flex ml-20 mb-10 gap-0">
+            <input  className='ml-4 text-xl' type="radio" onChange={()=> setCategory("")} name='category' />All
+            <input value='Dining Room' onChange={()=> setCategory("Dining Room")} className='ml-4 text-xl' name='category' type="radio" />Dining Room
+            <input value='Bedroom' onChange={()=> setCategory("Bedroom")} className='ml-4 text-xl' name='category' type="radio" />Bedroom
+            <input value='Office' onChange={()=> setCategory("Office")} className='ml-4 text-xl' name='category' type="radio" />Office
+            </div>
+
 
             {/* <div className="flex flex-wrap justify-center gap-10 mt-20 ml-10 "> */}
 
@@ -117,4 +128,7 @@ function Shop(props) {
     );
 }
 
-export default Shop;
+export default Shop;
+
+
+
