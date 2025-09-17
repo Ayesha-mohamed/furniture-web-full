@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from '../components/footer';
+import { NavLink } from 'react-router-dom';
 
 function Home(props) {
     return (
@@ -115,7 +116,7 @@ function Home(props) {
     <img  className="w-full h-52 object-cover"  src="https://i.pinimg.com/736x/89/ea/9a/89ea9a0d49daa9154c82dd5849810881.jpg"  alt="Armchair" />
     <div className="flex justify-between items-center p-2">
       <h1 className="text-lg sm:text-xl text-blue-950 font-semibold">Armchair</h1>
-     <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i>
+    <NavLink to={"/productPage"}> <i class="fa-regular fa-heart text-yellow-600 text-xl sm:text-2xl"></i> </NavLink>
     </div>
   </div>
 

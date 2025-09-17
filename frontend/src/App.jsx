@@ -18,6 +18,8 @@ import Message from "./Dashboard/Message"
 
 
 
+
+
 function Mainlayout({children}){
     return <>
     <div className="l">
@@ -101,6 +103,8 @@ const App = () =>{
             </Mainlayout>
             } />
         
+        
+        
 
 {/*dashboard */}
             <Route path="/dashboard" element={
@@ -108,6 +112,7 @@ const App = () =>{
                 <Reports />
             </Dashboardlayout>
             } />
+          
 
             <Route path="/addproduct" element={
             <Dashboardlayout>

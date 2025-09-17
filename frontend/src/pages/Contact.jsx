@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import Footer from '../components/footer';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 function Contact() {
 
   const [name,setName] = useState("")
   const [email,setEmail] = useState("")
   const[message,setMessage]  = useState("")
+
+const navigate = useNavigate()
+
 
   const handleContact = (e) =>{
     e.preventDefault();
@@ -18,6 +22,7 @@ function Contact() {
       
     }).then(()=>{
   toast.success("succsesfully")
+  // navigate("/message")
     setName("")
     setEmail("")
     setMessage("")

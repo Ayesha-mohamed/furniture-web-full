@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios"
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Footer from '../components/footer';
 
 function Shop(props) {
@@ -104,7 +104,7 @@ function Shop(props) {
                 <h1 className='text-2xl font-semibold text-red-600  '>${item.price}</h1>  
                </div>
                 <div className="text-center mt-5">
-                    <button onClick={()=> handleAddtoCart(item)} className='bg-[#19183B] border-2 border-none text-2xl text-white rounded-2xl px-10 py-2  '>Add to cart</button>
+              <button onClick={()=> handleAddtoCart(item)} className='bg-[#19183B] border-2 border-none text-2xl text-white rounded-2xl px-10 py-2  '>Add to cart</button> 
                     </div> 
               
             </div>
