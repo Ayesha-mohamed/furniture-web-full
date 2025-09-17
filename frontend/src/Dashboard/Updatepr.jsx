@@ -154,7 +154,7 @@ function UpdateProduct() {
         <form onSubmit={handleSubmit} className='w-96 border-2 border-slate-800 p-10 rounded-xl shadow-lg'>
           <input value={name} onChange={(e)=> setName(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='add productName' /><br /><br />
           <input value={price} onChange={(e)=> setPrice(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='price' /><br /><br />
-          <input value={quantity} onChange={(e)=> setQuantity(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='quantity' /><br /><br />
+          {/* <input value={quantity} onChange={(e)=> setQuantity(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='quantity' /><br /><br /> */}
 
           {/* ✅ Show old image if available */}
           {image && typeof image === "string" && (

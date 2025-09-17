@@ -9,7 +9,7 @@ function Home(props) {
           {/* 1 */}
         <div className="bg-cover bg-center w-full sm:h-[90vh] md:h-screen h-screen bg-[url('https://i.pinimg.com/1200x/90/2d/29/902d29873adecc364c265b10fb2bbdd5.jpg')] flex flex-col items-center justify-center text-center px-4">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white">  Luxury Furniture That Fits <br /> Your Lifestyle  </h1>
-      <Link to="/shop"> <button className="mt-8 px-6 sm:px-12 py-2 sm:py-3 text-lg sm:text-2xl  md:text-3xl text-white bg-blue-950 rounded-lg"> Show more </button></Link> 
+      <Link to="/describtion"> <button className="mt-8 px-6 sm:px-12 py-2 sm:py-3 text-lg sm:text-2xl  md:text-3xl text-white bg-blue-950 rounded-lg"> Show more </button></Link> 
           </div>
        {/* 2 */}
        <div className="absolute -bottom-24 left-1/2 transform -translate-x-1/2 bg-blue-950 rounded-lg w-[90%] sm:w-[630px] py-4">
@@ -21,11 +21,11 @@ function Home(props) {
      </div>
     </div>
 
-         <div className="flex flex-col md:flex-row items-center md:items-start mt-36 px-6 md:px-12 gap-12">
+   <div className="flex flex-col md:flex-row items-center md:items-start mt-36 px-6 md:px-12 gap-12">
   {/* Left text section */}
   <div className="md:w-1/2 text-center md:text-left">
     <h1 className="text-2xl sm:text-3xl font-semibold text-blue-950">
-      Why Choose Us
+        Why Choose Us
     </h1>
     <p className="mt-5 text-gray-500 text-sm sm:text-base leading-relaxed">
       At Luxury, we blend craftsmanship with comfort to deliver timeless

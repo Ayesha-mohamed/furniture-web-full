@@ -106,7 +106,7 @@ function Addproduct(props) {
                     <input value={price} onChange={(e)=> setPrice(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='price' /><br /><br />
                     {/* <input value={quantity} onChange={(e)=> setQuantity(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="number" placeholder='quantity' /><br /><br /> */}
                     <input onChange={(e)=> setImage(e.target.files[0])} className='file:w-42 file:h-10' type="file"  /><br /><br />
-                    <button onClick={handleSubmit} className='w-80 h-10 bg-blue-500 text-white rounded-xl '>Add Product</button>
+                    <button onClick={handleSubmit} className='w-80 h-12 bg-blue-950 text-white text-2xl rounded-xl '>Add Product</button>
                 </form>
             </div>
             <Toaster position='top-right' autoClose={2000} />

@@ -14,6 +14,7 @@ import LogIn from "./pages/login"
 import SignUp from "./pages/signUp"
 import UpdateProduct from "./Dashboard/Updatepr"
 import Message from "./Dashboard/Message"
+import Description from "./pages/describtion"
 
 
 
@@ -100,7 +101,12 @@ const App = () =>{
                 <SignUp />
             </Mainlayout>
             } />
-        
+
+            <Route path="/describtion" element={
+            <Mainlayout>
+                <Description />
+            </Mainlayout>
+            } />
 
 {/*dashboard */}
             <Route path="/dashboard" element={
