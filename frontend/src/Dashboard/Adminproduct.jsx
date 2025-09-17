@@ -173,7 +173,7 @@ export default function AdminProducts() {
 const [product, setProduct] = useState([])
 
     const handleReadProduct = () =>{
-        axios.get("https://farnilux-backend.onrender.com/read/allproduct").then((res) =>{
+        axios.get("https://farnilux-backend.onrender.com/cdread/allproduct").then((res) =>{
             setProduct(res.data)
         })
     }

@@ -97,7 +97,7 @@ function Header() {
 
 
   return (
-    <header className="shadow-md w-full fixed top-0 left-0 bg-white/20 z-50">
+    <header className="shadow-md w-full fixed top-0 left-0 bg-white z-10">
       <div className="flex justify-between items-center px-6 md:px-20 py-4">
         
         {/* Brand */}

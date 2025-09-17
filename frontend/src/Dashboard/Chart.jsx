@@ -147,7 +147,8 @@ export default function DashboardChart() {
           <div className="bg-gray-800 rounded-2xl p-5 shadow-md hover:shadow-lg transition">
             <div className="text-3xl text-gray-400  font-bold text-center" >Add New Product</div>
                      <Link to="/addproduct">
- <div className=" text-green-400 mt-1 text-center "><i className="fa-solid fa-plus text-3xl"></i></div></Link>
+                        <div className=" text-green-400 mt-1 text-center "><i className="fa-solid fa-plus text-3xl"></i></div>
+                      </Link>
           </div>
 
         </div>
