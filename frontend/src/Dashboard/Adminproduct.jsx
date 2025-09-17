@@ -87,15 +87,7 @@
 //         handleReadProduct()
 //     },[])
 
-//     const handleDelete = (id) =>{
-//         axios.delete(`http://localhost:3000/delete/product/${id}`).then(()=>{
-//             toast.success("Deleted successfully")
-//             handleReadProduct()
-//         }).catch((err)=>{
-//             console.log(err);
-//         })
-//     }
-
+//  
 
 //     return (
 //         <div className='ml-48 p-10 grid grid-cols-3 gap-10 '>
@@ -155,22 +147,28 @@
 
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import {ToastContainer, toast} from 'react-toastify'
+
 
 
 export default function AdminProducts() {
 
-  //   const [products, setProducts] = useState([]);
+    // const [products, setProducts] = useState([]);
+
+  
+ 
 
 
-  //     const handleReadProduct = () => {
-  //   axios.get("http://localhost:3000/read/allproduct").then((res) => {
-  //     setProducts(res.data);
-  //   });
-  // };
+   const handleDelete = (id) =>{
+        axios.delete(`http://localhost:3000/delete/product/${id}`).then(()=>{
+            toast.success("Deleted successfully")
+            handleReadProduct()
+        }).catch((err)=>{
+            console.log(err);
+        })
+    }
 
-  // useEffect(()=>{
-  //   handleReadProduct()
-  // },[])
+
 
 const [product, setProduct] = useState([])
 
@@ -207,7 +205,7 @@ const [product, setProduct] = useState([])
           </h2>
           {/* <p className="text-gray-400 mb-1">Category:{item.category}</p> */}
           <p className="text-red-400 font-bold mb-1">${item.price}</p>
-          <p className="text-gray-300 mb-1">Quantity:
+          <p className="text-gray-300 mb-1">
 
                 <span
                       className={`px-3 py-1 rounded-full text-sm font-semibold ${
@@ -218,6 +216,11 @@ const [product, setProduct] = useState([])
                     >
                       {item.quantity > 0 ? "Available" : "Out of Stock"}
                     </span>
+           <button
+            onClick={()=> handleDelete(item._id)} 
+            className='bg-red-600 text-white px-3 py-1 rounded-md mt-3 ml-20'><i className="fa-solid fa-trash"></i></button>
+
+                    
           </p>
         </div>
       })
@@ -225,6 +228,8 @@ const [product, setProduct] = useState([])
 
      
       </div>
+        <ToastContainer position='top-center' autoClose={2000}/>
+
     </div>
   );
 }
