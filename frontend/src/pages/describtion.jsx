@@ -92,10 +92,21 @@
 
 //
 import axios from "axios";
-import React, { useEffect } from "react";
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { NavLink, useParams } from 'react-router-dom';
 
 export default function ProductDetails() {
+
+
+    const [Name, setName] = useState("");
+  const [Price, setPrice] = useState("");
+  const [Quantity, setQuantity] = useState("");
+  const [Description, setDescription] = useState("")
+  const [Category, setCategory] = useState("")
+  const [Image, setImage] = useState(null)
+
+
+
 
 
       //local storage 
@@ -111,14 +122,34 @@ export default function ProductDetails() {
 
     }
 
-    //api read single
-    const readSingle = () =>{
-      axios.get("/read/singleproduct")
-    }
+    
 
-    useEffect(()=>{
-      readSingle()
-    },[])
+
+  
+    const params = useParams();
+  
+    const handleReadSingleData = () => {
+      axios.get(`https://farnilux-backend.onrender.com/read/singleproduct/${params.id}`)
+    .then((res) => {
+      setName(res.data[0].name);
+      setPrice(res.data[0].price);
+      setQuantity(res.data[0].quantity);
+      setCategory(res.data[0].category);
+      setDescription(res.data[0].Description);
+      setImage();
+    })
+    .catch((err)=>{
+      console.log(err);
+      toast.error("Failed to fetch product");
+    });
+    };
+  
+    useEffect(() => {
+      handleReadSingleData();
+    }, []);
+
+
+
   return (
     <div className="min-h-screen bg-gray-50 text-white flex justify-center items-center p-10">
       <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 bg-gray-100 rounded-2xl shadow-2xl p-8">
@@ -148,7 +179,9 @@ export default function ProductDetails() {
 
           {/* Action Buttons */}
           <div className="flex gap-4 mt-6">
-            <button className="bg-blue-950 hover:bg-blue-900 text-white font-semibold px-6 py-3 rounded-xl shadow-md">
+            <button
+            onClick={()=> handleAddtoCart(item)}
+             className="bg-blue-950 hover:bg-blue-900 text-white font-semibold px-6 py-3 rounded-xl shadow-md">
               Add to Cart
             </button>
           <NavLink to='/shop'> <button className="bg-gray-700 hover:bg-gray-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md">

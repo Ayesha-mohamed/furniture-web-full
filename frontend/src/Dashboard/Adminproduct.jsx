@@ -159,20 +159,30 @@ import axios from 'axios';
 
 export default function AdminProducts() {
 
-    const [products, setProducts] = useState([]);
+  //   const [products, setProducts] = useState([]);
 
 
-      const handleReadProduct = () => {
-    axios.get("http://localhost:3000/read/allproduct").then((res) => {
-      setProducts(res.data);
-    });
-  };
+  //     const handleReadProduct = () => {
+  //   axios.get("http://localhost:3000/read/allproduct").then((res) => {
+  //     setProducts(res.data);
+  //   });
+  // };
 
-  useEffect(()=>{
-    handleReadProduct()
-  },[])
+  // useEffect(()=>{
+  //   handleReadProduct()
+  // },[])
 
+const [product, setProduct] = useState([])
 
+    const handleReadProduct = () =>{
+        axios.get("https://farnilux-backend.onrender.com/read/allproduct").then((res) =>{
+            setProduct(res.data)
+        })
+    }
+
+    useEffect(() =>{
+        handleReadProduct()
+   },[])
 
   return (
     <div className="min-h-screen bg-gray-900 p-10">
@@ -185,7 +195,7 @@ export default function AdminProducts() {
   
 
      {
-      products.map((item) =>{
+      product.map((item) =>{
         return    <div className="bg-gray-800 rounded-2xl shadow-xl p-5 flex flex-col hover:scale-105 duration-300">
           <img
             src={`http://localhost:3000/allproductimage/${item.prImage}`}
@@ -195,7 +205,7 @@ export default function AdminProducts() {
           <h2 className="text-2xl font-semibold mb-1 text-white">
             {item.name}
           </h2>
-          <p className="text-gray-400 mb-1">Category:{item.category}</p>
+          {/* <p className="text-gray-400 mb-1">Category:{item.category}</p> */}
           <p className="text-red-400 font-bold mb-1">${item.price}</p>
           <p className="text-gray-300 mb-1">Quantity:
 

@@ -97,7 +97,7 @@ function Shop(props) {
         {
          data.length > 0 ?   data.map((item)=>{
                 return <>
-           <NavLink to='/describtion'> <div className="w-80 h-[420px] min-h-[300px] ml-0 shadow-md  bg-gray-100 rounded-lg p- hover:scale-105 duration-300 cursor-pointer " key={item._id}>
+           <NavLink to={`/desc/${item._id}`}> <div className="w-80 h-[420px] min-h-[300px] ml-0 shadow-md  bg-gray-100 rounded-lg p- hover:scale-105 duration-300 cursor-pointer " key={item._id}>
               
                 <img className='w-72 h-80 object-cover  mb-5' src={`http://localhost:3000/allproductimage/${item.prImage}`} alt={item.prImage} />
                <div className="text-center justify-around mt-3 ">

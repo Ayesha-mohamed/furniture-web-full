@@ -139,7 +139,7 @@ export default function DashboardChart() {
             <div className="text-xs text-green-400 mt-1">+2.1% this month</div>
           </div>
 
-        <NavLink to='/adminproduct'>  <div className="bg-gray-800 rounded-2xl p-5 shadow-md hover:shadow-lg transition">
+        <NavLink to='/adminproduct'><div className="bg-gray-800 rounded-2xl h-32 p-5 shadow-md hover:shadow-lg transition">
             <div className="text-3xl font-bold text-center mt-3 text-gray-400">products</div>
             {/* <div className="text-xs text-green-400 mt-1">+</div> */}
           </div></NavLink>
