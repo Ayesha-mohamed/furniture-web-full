@@ -84,7 +84,7 @@ function Addproduct(props) {
             
             toast.success("successfully")
             setTimeout(()=>{
-                navigate("/shop")
+                navigate("/chart")
             },2000)
         })
     }
@@ -104,7 +104,7 @@ function Addproduct(props) {
                 <form className='w-96 h-96 border-2 border-slate-800 p-10 rounded-xl shadow-lg '>
                     <input value={name} onChange={(e)=> setName(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='add productName' /><br /><br />
                     <input value={price} onChange={(e)=> setPrice(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="text" placeholder='price' /><br /><br />
-                    {/* <input value={quantity} onChange={(e)=> setQuantity(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="number" placeholder='quantity' /><br /><br /> */}
+                    <input value={quantity} onChange={(e)=> setQuantity(e.target.value)} className='w-80 h-10 border-2 border-slate-800 px-4 rounded-xl' type="number" placeholder='quantity' /><br /><br />
                     <input onChange={(e)=> setImage(e.target.files[0])} className='file:w-42 file:h-10' type="file"  /><br /><br />
                     <button onClick={handleSubmit} className='w-80 h-10 bg-blue-500 text-white rounded-xl '>Add Product</button>
                 </form>
