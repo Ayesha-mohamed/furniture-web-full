@@ -1,3 +1,4 @@
+
 // import React from 'react';
 // import { Link, NavLink } from 'react-router-dom';
 
@@ -14,6 +15,21 @@
 //   const count = cartCount.length
 
   
+
+// import React, { useState } from 'react';
+// import { Link, NavLink } from 'react-router-dom';
+
+// function Header() {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const getUser = localStorage.getItem("user");
+
+//   const handleLogout = () => {
+//     localStorage.removeItem("user");
+//   };
+
+
+//   const cartCount = JSON.parse(localStorage.getItem("cart")) || [];
+//   const count = cartCount.length;
 
 
 //   return (
@@ -78,6 +94,7 @@ function Header() {
 
   const cartCount = JSON.parse(localStorage.getItem("cart")) || [];
   const count = cartCount.length;
+
 
   return (
     <header className="shadow-md w-full fixed top-0 left-0 bg-white/20 z-50">
@@ -192,4 +209,5 @@ function Header() {
   );
 }
 
-export default Header;
+
+export default Header

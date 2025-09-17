@@ -8,14 +8,14 @@ function Reports(props) {
     const [totalcustomer, setTotalCustomer] = useState([]);
 
     const handleReadTotal = () =>{
-        axios.get("http://localhost:3000/readtotal/oder").then((res)=>{
+        axios.get("https://farnilux-backend.onrender.com/readtotal/oder").then((res)=>{
             setTotalSales(res.data[0].total)
             // console.log(res.data[0].total);
         })
     }
 
     const handleReaddAllCustomers = () =>{
-        axios.get("http://localhost:3000/total/customer").then((res)=>{
+        axios.get("https://farnilux-backend.onrender.com/total/customer").then((res)=>{
             setTotalCustomer(res.data[0].totalCustomer)
         })
     }

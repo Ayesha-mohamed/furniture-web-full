@@ -186,7 +186,7 @@
 
 // export default Cart
 
-///
+
 
 import { useEffect, useState } from "react";
 import axios from "axios";  
@@ -246,7 +246,7 @@ function Cart() {
             return
         }
         
-        axios.post("http://localhost:3000/create/order",{
+        axios.post("https://farnilux-backend.onrender.com/create/order",{
             customer: customerOrder,
             products: Data.map(item =>{
                 return {productId: item._id, quantity: item.quantity}
@@ -269,8 +269,8 @@ function Cart() {
 
 
     return   <>
-            <div className="bg-gray-100 min-h-screen py-10 px-4">
-                <div className="max-w-6xl mx-auto bg-white shadow-md rounded-lg flex flex-col lg:flex-row overflow-hidden">
+            <div className="bg-gray-100 min-h-screen py-10 px-4 ">
+                <div className="max-w-6xl mx-auto bg-white- shadow-md rounded-lg flex flex-col lg:flex-row overflow-hidden mt-24">
                     {/* Left: Cart Items */}
                     <div className="w-full lg:w-2/1 p-6">
                         <h2 className="text-2xl font-semibold mb-4">Shopping Cart</h2>
@@ -289,6 +289,11 @@ function Cart() {
                                 >
                                     {/* Product Details */}
                                     <div className="flex items-center gap-4 w-full md:w-40">
+                                        {/* <img
+                                            // src={`https://farnilux-backend.onrender.com/allproductimage/${item.prImage}`}
+                                            alt=""
+                                            className="w-20 h-20 object-contain"
+                                        /> */}
                                         <img
                                             src={`http://localhost:3000/allproductimage/${item.prImage}`}
                                             alt=""
@@ -370,8 +375,9 @@ function Cart() {
                   <ToastContainer position="top-right" autoClose={2000} />
 
         </>
+}
 
   
-}
+
 
 export default Cart

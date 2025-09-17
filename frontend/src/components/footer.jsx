@@ -7,7 +7,7 @@ function Footer() {
 
         {/* Brand Info */}
         <div>
-          <h1 className="text-3xl font-semibold mb-2">Furniture</h1>
+          <h1 className="text-3xl font-semibold mb-2">FurniLuxe</h1>
           <p className="text-gray-400 text-sm">  Discover Timeless Furniture for Modern Living </p>
         </div>
 
@@ -19,6 +19,7 @@ function Footer() {
         <Link to="/About"> <li>About</li></Link>    
          <Link to="/shop"><li>Shop</li></Link>   
         <Link to="/Contact"> <li>Contact</li> </Link> 
+        {/* <Link to="/dashboard"> <li>Admin login</li> </Link>  */}
           </ul>
         </div>
 
