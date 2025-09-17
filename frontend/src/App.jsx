@@ -13,9 +13,11 @@ import Product from "./Dashboard/product"
 import LogIn from "./pages/login"
 import SignUp from "./pages/signUp"
 import UpdateProduct from "./Dashboard/Updatepr"
-import Message from "./Dashboard/Message"
-import DashboardChart from "./Dashboard/Chart"
+// import Message from "./Dashboard/Message"
 
+import Description from "./pages/describtion"
+
+import DashboardChart from "./Dashboard/Chart"
 
 
 
@@ -98,9 +100,21 @@ const App = () =>{
                 <LogIn />
             </Mainlayout>
             } />
+        <Route path="/ProductPage" element={
+            <Mainlayout>
+                <ProductPage />
+            </Mainlayout>
+            } />
         <Route path="/signup" element={
             <Mainlayout>
                 <SignUp />
+            </Mainlayout>
+            } />
+
+
+            <Route path="/describtion" element={
+            <Mainlayout>
+                <Description />
             </Mainlayout>
             } />
 
@@ -111,8 +125,7 @@ const App = () =>{
             </Mainlayout>
             } /> */}
         
-        
-        
+
 
 {/*dashboard */}
             <Route path="/dashboard" element={
