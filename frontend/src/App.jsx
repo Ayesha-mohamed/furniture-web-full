@@ -8,7 +8,6 @@ import Cart from "./pages/Cart"
 import Addproduct from "./Dashboard/Addproduct"
 // import Dashboard from "./Dashboard/Dashboard"
 // import Reports from "./Dashboard/Reports"
-import Details from "./pages/Details"
 // import Product from "./Dashboard/product"
 import LogIn from "./pages/login"
 import SignUp from "./pages/signUp"
@@ -18,6 +17,7 @@ import UpdateProduct from "./Dashboard/Updatepr"
 import Description from "./pages/describtion"
 
 import DashboardChart from "./Dashboard/Chart"
+import AdminProducts from "./Dashboard/Adminproduct"
 
 
 
@@ -90,11 +90,7 @@ const App = () =>{
                 <SignUp />
             </Mainlayout>
             } />
-        <Route path="/details" element={
-            <Mainlayout>
-                <Details />
-            </Mainlayout>
-            } />
+    
         <Route path="/login" element={
             <Mainlayout>
                 <LogIn />
@@ -154,6 +150,7 @@ const App = () =>{
             } /> */}
 
             <Route path='/dashboard' element={<DashboardChart />} />
+            <Route path='/adminproduct' element={<AdminProducts />} />
 
     </Routes>
    

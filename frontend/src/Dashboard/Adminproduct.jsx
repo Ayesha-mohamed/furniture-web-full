@@ -146,3 +146,75 @@
 // }   
 
 // export default 
+
+
+
+
+
+
+
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
+
+
+export default function AdminProducts() {
+
+    const [products, setProducts] = useState([]);
+
+
+      const handleReadProduct = () => {
+    axios.get("http://localhost:3000/read/allproduct").then((res) => {
+      setProducts(res.data);
+    });
+  };
+
+  useEffect(()=>{
+    handleReadProduct()
+  },[])
+
+
+
+  return (
+    <div className="min-h-screen bg-gray-900 p-10">
+      <h1 className="text-4xl font-bold mb-10 text-center text-white">
+        Admin Products
+      </h1>
+
+
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  
+
+     {
+      products.map((item) =>{
+        return    <div className="bg-gray-800 rounded-2xl shadow-xl p-5 flex flex-col hover:scale-105 duration-300">
+          <img
+            src={`http://localhost:3000/allproductimage/${item.prImage}`}
+            alt={item.prImage}
+            className="w-full h-64 object-cover rounded-xl mb-4"
+          />
+          <h2 className="text-2xl font-semibold mb-1 text-white">
+            {item.name}
+          </h2>
+          <p className="text-gray-400 mb-1">Category:{item.category}</p>
+          <p className="text-red-400 font-bold mb-1">${item.price}</p>
+          <p className="text-gray-300 mb-1">Quantity:
+
+                <span
+                      className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                        item.quantity > 0
+                          ? "bg-green-900 text-green-300"
+                          : "bg-red-900 text-red-300"
+                      }`}
+                    >
+                      {item.quantity > 0 ? "Available" : "Out of Stock"}
+                    </span>
+          </p>
+        </div>
+      })
+     }
+
+     
+      </div>
+    </div>
+  );
+}

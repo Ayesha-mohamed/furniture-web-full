@@ -83,7 +83,7 @@ export default function DashboardChart() {
   }
 
   useEffect(() => {
-    handleReadProduct();
+    // handleReadProduct();
     handleMessages()
     handleReadTotal();
     handleReaddAllCustomers();
@@ -139,10 +139,10 @@ export default function DashboardChart() {
             <div className="text-xs text-green-400 mt-1">+2.1% this month</div>
           </div>
 
-          <div className="bg-gray-800 rounded-2xl p-5 shadow-md hover:shadow-lg transition">
+        <NavLink to='/adminproduct'>  <div className="bg-gray-800 rounded-2xl p-5 shadow-md hover:shadow-lg transition">
             <div className="text-3xl font-bold text-center mt-3 text-gray-400">products</div>
             {/* <div className="text-xs text-green-400 mt-1">+</div> */}
-          </div>
+          </div></NavLink>
 
           <div className="bg-gray-800 rounded-2xl p-5 shadow-md hover:shadow-lg transition">
             <div className="text-3xl text-gray-400  font-bold text-center" >Add New Product</div>
@@ -154,7 +154,7 @@ export default function DashboardChart() {
 
         {/* PRODUCTS & MESSAGES */}
         <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* PRODUCTS */}
+          {/* PRODUCTS
           <div className="bg-gray-800 rounded-2xl p-5 shadow-md">
             <h2 className="text-lg font-semibold mb-4 text-indigo-300">Products</h2>
             <div className="space-y-3">
@@ -194,7 +194,7 @@ export default function DashboardChart() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* MESSAGES */}
           <div className="bg-gray-800 rounded-2xl p-5 shadow-md">
