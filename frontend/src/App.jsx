@@ -6,10 +6,10 @@ import Contact from "./pages/Contact"
 import Shop from "./pages/Shop"
 import Cart from "./pages/Cart"
 import Addproduct from "./Dashboard/Addproduct"
-import Dashboard from "./Dashboard/Dashboard"
-import Reports from "./Dashboard/Reports"
+// import Dashboard from "./Dashboard/Dashboard"
+// import Reports from "./Dashboard/Reports"
 import Details from "./pages/Details"
-import Product from "./Dashboard/product"
+// import Product from "./Dashboard/product"
 import LogIn from "./pages/login"
 import SignUp from "./pages/signUp"
 import UpdateProduct from "./Dashboard/Updatepr"
@@ -35,16 +35,16 @@ function Mainlayout({children}){
 }
 
 
-function Dashboardlayout({children}){
-    return <>
-    <div className="k">
-        <Dashboard />
-        <div className="k">
-            {children}
-        </div>
-    </div>
-    </>
-} 
+// function Dashboardlayout({children}){
+//     return <>
+//     <div className="k">
+//         <Dashboard />
+//         <div className="k">
+//             {children}
+//         </div>
+//     </div>
+//     </>
+// } 
 
 const App = () =>{
     return <>
@@ -123,25 +123,23 @@ const App = () =>{
 
 
 {/*dashboard */}
-            <Route path="/dashboard" element={
+            {/* <Route path="/dashboard" element={
             <Dashboardlayout>
                 <Reports />
             </Dashboardlayout>
-            } />
+            } /> */}
 
             <Route path="/addproduct" element={
           
                 <Addproduct />
             } />
-            <Route path="/product" element={
+            {/* <Route path="/product" element={
             <Dashboardlayout>
                 <Product />
             </Dashboardlayout>
-            } />
+            } /> */}
             <Route path="/update/product/:id" element={
-            <Dashboardlayout>
                 <UpdateProduct />
-            </Dashboardlayout>
             } />
 {/* 
             <Route path="/message" element={
@@ -150,7 +148,7 @@ const App = () =>{
             </Dashboardlayout>
             } /> */}
 
-            <Route path='/chart' element={<DashboardChart />} />
+            <Route path='/dashboard' element={<DashboardChart />} />
 
     </Routes>
    

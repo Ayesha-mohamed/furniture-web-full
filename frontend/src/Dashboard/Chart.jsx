@@ -78,6 +78,10 @@ export default function DashboardChart() {
   };
 
 
+       const handleLogout = () =>{
+    localStorage.removeItem("admin")
+  }
+
   useEffect(() => {
     handleReadProduct();
     handleMessages()
@@ -115,11 +119,10 @@ export default function DashboardChart() {
         {/* HEADER */}
         <header className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold text-indigo-400">Dashboard</h1>
-          <Link to="/addproduct">
             <button className="px-4 py-3 bg-indigo-950 hover:bg-indigo-900 transition rounded-xl shadow-md text-white text-sm">
-              + New product
+         <NavLink to='/login'>  <button onClick={handleLogout} className='text-2xl font-semibold '><i className="fa-solid fa-right-from-bracket text-2xl "></i>LogOut</button></NavLink>
+
             </button>
-          </Link>
         </header>
 
         {/* TOP STATS */}
@@ -135,6 +138,18 @@ export default function DashboardChart() {
             <div className="text-3xl font-bold mt-2 text-emerald-400">{totalcustomer}</div>
             <div className="text-xs text-green-400 mt-1">+2.1% this month</div>
           </div>
+
+          <div className="bg-gray-800 rounded-2xl p-5 shadow-md hover:shadow-lg transition">
+            <div className="text-3xl font-bold text-center mt-3 text-gray-400">products</div>
+            {/* <div className="text-xs text-green-400 mt-1">+</div> */}
+          </div>
+
+          <div className="bg-gray-800 rounded-2xl p-5 shadow-md hover:shadow-lg transition">
+            <div className="text-3xl text-gray-400  font-bold text-center" >Add New Product</div>
+                     <Link to="/addproduct">
+ <div className=" text-green-400 mt-1 text-center "><i className="fa-solid fa-plus text-3xl"></i></div></Link>
+          </div>
+
         </div>
 
         {/* PRODUCTS & MESSAGES */}
