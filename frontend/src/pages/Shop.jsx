@@ -58,10 +58,6 @@ function Shop(props) {
         }
         localStorage.setItem("cart", JSON.stringify(cart));
 
-        
-
-
-
     }
 
     return (
@@ -86,7 +82,7 @@ function Shop(props) {
             </div>
 
             {/* Categories filter */}
-            <div className="flex ml-20 mb-10 gap-0">
+            <div className="flex-col ml-20 mb-10 gap-10 font-semibold shadow-md w-[550px]">
             <input  className='ml-4 text-xl' type="radio" onChange={()=> setCategory("")} name='category' />All
             <input value='Dining Room' onChange={()=> setCategory("Dining Room")} className='ml-4 text-xl' name='category' type="radio" />Dining Room
             <input value='Bedroom' onChange={()=> setCategory("Bedroom")} className='ml-4 text-xl' name='category' type="radio" />Bedroom
