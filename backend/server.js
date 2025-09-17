@@ -9,6 +9,7 @@ const orderRoutes =  require("./routers/orderRoutes")
 const AdminRouter = require(".//routers/adminRouter")
 
 
+
 const app = express()
 
 const port = process.env.port || 3000;      
@@ -16,12 +17,23 @@ const port = process.env.port || 3000;
 app.use(cors());
 app.use(express.json());
 
-// mongoose.connect(process.env.db_url).then(()=> console.log("connected to database"))
+
 mongoose.connect(process.env.db_url).then(()=> console.log("connected to database"))
 
+mongoose.connect("mongodb://127.0.0.1:27017/furniture-Store", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log("MongoDB connected"))
+.catch(err => console.log(err));
+
+// Routes
+const productRoutes = require("./routes/products");
+app.use("/api/description", Routes);
 
 app.use("/allproductimage", express.static("prImages"))
 
+app.use(productRoute)
 app.use(productRoute)
 
 app.use(contactRoute)

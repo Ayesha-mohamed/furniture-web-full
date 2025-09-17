@@ -1,97 +1,90 @@
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
-import React, { useState } from "react";
+function Description() {
+  const params = useParams();
+  const [product, setProduct] = useState([]);
+  const [Name, setName] = useState("");
+  const [Price, setPrice] = useState("");
+  const [Quantity, setQuantity] = useState("");
+  const [Description, setDescription] = useState("")
+  const [Category, setCategory] = useState("")
+  const [Image, setImage] = useState(null)
 
-export default function Description() {
-  const product = {
-    title: "Ilana",
-    description:
-      "A sectional sofa or an L shaped sofa can make a great addition to your living room based on your needs.",
-    price: 430.99,
-    reviews: [
-      { id: 1, user: "Ayaan", text: "Very comfortable and stylish!", rating: 5 },
-      { id: 2, user: "Khadar", text: "Delivery took a bit long, but quality is good.", rating: 4 },
-    ],
-    images: [
-      "https://picsum.photos/id/1062/800/600",
-      "https://picsum.photos/id/1063/800/600",
-      "https://picsum.photos/id/1064/800/600",
-      "https://picsum.photos/id/1065/800/600",
-    ],
-  };
+  const [selectedColor, setSelectedColor] = useState("");
+  const HandleGetProductDetails = (_id) => {
+    axios.get(`http://localhost:3000/read/singleproduct/${_id}`).then((res) => {
+      setProduct(res.data)
+      // setName(res.data.name),
+      // setPrice(res.data.price),
+      // setCategory(res.data.category)
+      // setDescription(res.data.description)
+      // setQuantity(res.data.quantity)
+      // setImage(res.data.file[0])
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
 
-  const [selectedImage, setSelectedImage] = useState(product.images[0]);
-  const [liked, setLiked] = useState(false);
+  // useEffect(() => {
+  //   const fetchProduct = async () => {
+  //     try {
+  //       const res = await axios.get(`http://localhost:3000/read/singleproduct/${_id}`);
+  //       setProduct(res.data);
+  //       setSelectedColor(res.data.colors[0] || "");
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+  //   };
+  //   fetchProduct();
+  // }, [id]);
 
-  const toggleLike = () => setLiked(!liked);
+  useEffect(() => {
+    HandleGetProductDetails()
+  },[])
+  // if (!product) return <div className="text-center text-red-500">Loading...</div>;
 
   return (
-    <div className="bg-gray-50 min-h-screen p-8">
-      <div className="max-w-6xl mx-auto bg-white shadow-sm rounded-lg p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
-        {/* left: main image */}
-        <div className="lg:col-span-7 flex flex-col items-center justify-center">
-          <img
-            src={selectedImage}
-            alt="Product"
-            className="w-full h-[420px] object-contain rounded-md shadow transition-all duration-500"
-          />
+    <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "20px", display: "flex", gap: "40px", flexWrap: "wrap" }}>
+      {/* Images */}
+      <div style={{ flex: "1 1 500px" }}>
+        {/* <img src={Image[0]} alt={Name} style={{ width: "100%", borderRadius: "10px" }} /> */}
+      </div>
 
-          {/* thumbnails */}
-          <div className="mt-6 flex gap-4">
-            {product.images.map((img, idx) => (
-              <img
-                key={idx}
-                src={img}
-                alt={`Thumbnail ${idx + 1}`}
-                onClick={() => setSelectedImage(img)}
-                className={`w-20 h-20 object-cover rounded-md cursor-pointer border-2 transition-all duration-300 ${
-                  selectedImage === img ? "border-black scale-105" : "border-transparent"
-                }`}
-              />
+      {/* Details */}
+      <div style={{ flex: "1 1 500px" }}>
+        <h1>{Name}</h1>
+        <p>{Description}</p>
+        <h2 style={{ color: "#2c3e50" }}>${Price}</h2>
+
+        {/* Color Selection */}
+        <div>
+          <label>Select Color: </label>
+          {/* <select value={selectedColor} onChange={e => setSelectedColor(e.target.value)}>
+            {product.colors.map((color, idx) => (
+              <option key={idx} value={color}>{color}</option>
             ))}
-          </div>
+          </select> */}
         </div>
 
-        {/* right: details */}
-        <div className="lg:col-span-5">
-          <div className="flex items-start justify-between">
-            <div>
-              <h1 className="text-3xl font-bold">{product.title}</h1>
-              <p className="text-gray-500 mt-2">{product.description}</p>
-            </div>
+        <button style={{ marginTop: "20px", backgroundColor: "#e67e22", color: "white", padding: "15px 25px", border: "none", borderRadius: "5px", cursor: "pointer" }}>
+          Add to Cart
+        </button>
 
-            <button
-              onClick={toggleLike}
-              className={`p-3 rounded-full border transition-colors ${
-                liked ? "bg-pink-100" : "bg-white"
-              }`}
-            >
-              {liked ? "❤" : "🤍"}
-            </button>
-          </div>
-
-          <div className="mt-6">
-            <div className="text-2xl font-semibold">${product.price}</div>
-
-            {/* reviews */}
-            <div className="mt-8 border-t pt-6">
-              <h3 className="text-lg font-semibold">Customer Reviews</h3>
-              <div className="mt-4 space-y-4">
-                {product.reviews.map((r) => (
-                  <div key={r.id} className="border rounded-md p-3">
-                    <div className="flex justify-between">
-                      <span className="font-semibold">{r.user}</span>
-                      <span>{"⭐".repeat(r.rating)}</span>
-                    </div>
-                    <p className="text-sm text-gray-600 mt-2">{r.text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+        {/* Features */}
+        <div style={{ marginTop: "20px" }}>
+          <h3>Key Features:</h3>
+          <ul>
+            <li>High-density foam cushions</li>
+            <li>Durable wooden frame</li>
+            <li>Modern design</li>
+            <li>Easy to clean</li>
+          </ul>
         </div>
       </div>
     </div>
   );
 }
 
-
+export default Description;

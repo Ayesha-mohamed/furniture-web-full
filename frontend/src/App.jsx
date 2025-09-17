@@ -100,11 +100,11 @@ const App = () =>{
                 <LogIn />
             </Mainlayout>
             } />
-        <Route path="/ProductPage" element={
+        {/* <Route path="/ProductPage" element={
             <Mainlayout>
                 <ProductPage />
             </Mainlayout>
-            } />
+            } /> */}
         <Route path="/signup" element={
             <Mainlayout>
                 <SignUp />
@@ -112,7 +112,7 @@ const App = () =>{
             } />
 
 
-            <Route path="/describtion" element={
+            <Route path="/desc" element={
             <Mainlayout>
                 <Description />
             </Mainlayout>
